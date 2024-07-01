@@ -16,6 +16,17 @@ final class MainViewController: BaseViewController {
         return searchBar
     }()
     
+//    private lazy var collectionView: UICollectionView = {
+//        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+//        collectionView.backgroundColor = .clear
+//        collectionView.register(
+//            WeatherHeaderView.self,
+//            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader
+//        )
+//        collectionView.showsVerticalScrollIndicator = false
+//        return collectionView
+//    }()
+    
     // MARK: - Properties
     
     
