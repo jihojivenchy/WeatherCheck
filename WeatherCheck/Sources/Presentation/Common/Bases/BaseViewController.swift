@@ -35,6 +35,8 @@ class BaseViewController: UIViewController {
 extension BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        view.backgroundColor = .white
         configureAttributes()
         configureLayouts()
         bind()
