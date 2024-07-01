@@ -24,6 +24,7 @@
 		7C79EFE92C32BB9700DEAE3C /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 7C79EFE82C32BB9700DEAE3C /* RxCocoa */; };
 		7C79EFED2C32BB9700DEAE3C /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 7C79EFEC2C32BB9700DEAE3C /* RxRelay */; };
 		7C79EFF12C32BB9700DEAE3C /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 7C79EFF02C32BB9700DEAE3C /* RxSwift */; };
+		7C79F02E2C32CB8800DEAE3C /* SearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F02D2C32CB8800DEAE3C /* SearchBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		7C0851D62C32A01A00545907 /* Reusable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reusable.swift; sourceTree = "<group>"; };
 		7C0851D82C32A1C500545907 /* ViewModelType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelType.swift; sourceTree = "<group>"; };
 		7C0851DA2C32A7AD00545907 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		7C79F02D2C32CB8800DEAE3C /* SearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,8 +180,17 @@
 			isa = PBXGroup;
 			children = (
 				7C0851DA2C32A7AD00545907 /* MainViewController.swift */,
+				7C79F02F2C32CB9200DEAE3C /* View */,
 			);
 			path = Main;
+			sourceTree = "<group>";
+		};
+		7C79F02F2C32CB9200DEAE3C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7C79F02D2C32CB8800DEAE3C /* SearchBar.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,6 +283,7 @@
 				7C0851CC2C329E2000545907 /* BaseView.swift in Sources */,
 				7C0851D42C329FE200545907 /* UICollectionView+.swift in Sources */,
 				7C0851D12C329EE400545907 /* BaseCollectionViewCell.swift in Sources */,
+				7C79F02E2C32CB8800DEAE3C /* SearchBar.swift in Sources */,
 				7C0851D92C32A1C500545907 /* ViewModelType.swift in Sources */,
 				7C0851DB2C32A7AD00545907 /* MainViewController.swift in Sources */,
 			);

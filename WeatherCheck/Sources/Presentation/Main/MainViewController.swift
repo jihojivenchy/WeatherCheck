@@ -10,7 +10,11 @@ import SnapKit
 
 final class MainViewController: BaseViewController {
     // MARK: - UI
-    
+    private lazy var searchBar: UISearchBar = {
+        let searchBar = UISearchBar()
+        searchBar.placeholder = "Search"
+        return searchBar
+    }()
     
     // MARK: - Properties
     
@@ -26,6 +30,7 @@ final class MainViewController: BaseViewController {
     
     // MARK: - Configuration
     override func configureAttributes() {
+        navigationItem.titleView = searchBar
     }
     
     // MARK: - Layouts
