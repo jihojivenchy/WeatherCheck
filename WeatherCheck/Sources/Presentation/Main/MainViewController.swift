@@ -20,7 +20,7 @@ final class MainViewController: BaseViewController {
 
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
-        scrollView.backgroundColor = .skyColor  // TODO: - 추후 배경 이미지 넣으면 .clear로 수정
+        scrollView.backgroundColor = .clear
         scrollView.showsVerticalScrollIndicator = false
         return scrollView
     }()
@@ -53,10 +53,12 @@ final class MainViewController: BaseViewController {
     override func configureAttributes() {
         let appearance = UINavigationBarAppearance()
         appearance.configureWithTransparentBackground()
-        appearance.backgroundColor = .sky
+        appearance.backgroundColor = .clear
         navigationItem.standardAppearance = appearance
         navigationItem.scrollEdgeAppearance = appearance
         navigationItem.titleView = searchBar
+        
+        view.backgroundColor = .sky
     }
     
     // MARK: - Layouts
