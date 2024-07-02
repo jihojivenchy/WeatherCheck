@@ -28,6 +28,7 @@ final class MainViewController: BaseViewController {
     private let currentWeatherView = CurrentWeatherView()
     private let hourlyWeatherView = HourlyWeatherView()
     private let dailyWeatherView = DailyWeatherView()
+    private let cityLocationView = CityLocationView()
     
     // MARK: - Properties
     private let viewModel: MainViewModel
@@ -63,6 +64,7 @@ final class MainViewController: BaseViewController {
         scrollView.addSubview(currentWeatherView)
         scrollView.addSubview(hourlyWeatherView)
         scrollView.addSubview(dailyWeatherView)
+        scrollView.addSubview(cityLocationView)
         
         scrollView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
@@ -85,6 +87,12 @@ final class MainViewController: BaseViewController {
             make.top.equalTo(hourlyWeatherView.snp.bottom).offset(20)
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(15)
             make.height.equalTo(290)
+        }
+        
+        cityLocationView.snp.makeConstraints { make in
+            make.top.equalTo(dailyWeatherView.snp.bottom).offset(20)
+            make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(15)
+            make.height.equalTo(360)
             make.bottom.equalToSuperview().inset(30)
         }
     }
@@ -115,6 +123,13 @@ final class MainViewController: BaseViewController {
                 
                 // 5일 간의 날씨 표시
                 self.dailyWeatherView.configure(dailyWeathers: data.dailyWeather)
+                
+                // 도시 위치 표시
+                self.cityLocationView.configure(
+                    cityName: data.cityName,
+                    latitude: data.latitude,
+                    longitude: data.longitude
+                )
             })
             .disposed(by: disposeBag)
     }

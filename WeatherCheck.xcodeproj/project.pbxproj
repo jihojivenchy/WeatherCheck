@@ -43,6 +43,7 @@
 		7C79F0612C33E0F500DEAE3C /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F0602C33E0F500DEAE3C /* BaseTableViewCell.swift */; };
 		7C79F0632C33E14600DEAE3C /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F0622C33E14600DEAE3C /* UITableView+.swift */; };
 		7C79F0652C33E74D00DEAE3C /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F0642C33E74D00DEAE3C /* UILabel+.swift */; };
+		7C79F0682C33F0AC00DEAE3C /* CityLocationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F0672C33F0AC00DEAE3C /* CityLocationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		7C79F0602C33E0F500DEAE3C /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		7C79F0622C33E14600DEAE3C /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
 		7C79F0642C33E74D00DEAE3C /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
+		7C79F0672C33F0AC00DEAE3C /* CityLocationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityLocationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -240,6 +242,7 @@
 				7C79F05B2C33DC7300DEAE3C /* Current */,
 				7C79F05C2C33DC7C00DEAE3C /* Hourly */,
 				7C79F05D2C33DC8B00DEAE3C /* Daily */,
+				7C79F0662C33F09A00DEAE3C /* Location */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -343,6 +346,14 @@
 			path = Daily;
 			sourceTree = "<group>";
 		};
+		7C79F0662C33F09A00DEAE3C /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				7C79F0672C33F0AC00DEAE3C /* CityLocationView.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -439,6 +450,7 @@
 				7C79F0412C33A3CA00DEAE3C /* HourlyWeatherCell.swift in Sources */,
 				7C0851D72C32A01A00545907 /* Reusable.swift in Sources */,
 				7C0851CC2C329E2000545907 /* BaseView.swift in Sources */,
+				7C79F0682C33F0AC00DEAE3C /* CityLocationView.swift in Sources */,
 				7C79F0452C33BCB900DEAE3C /* UIColor+.swift in Sources */,
 				7C0851D42C329FE200545907 /* UICollectionView+.swift in Sources */,
 				7C0851D12C329EE400545907 /* BaseCollectionViewCell.swift in Sources */,

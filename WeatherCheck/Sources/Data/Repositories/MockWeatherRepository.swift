@@ -29,7 +29,9 @@ final class MockWeatherRepository: WeatherRepository {
                 DailyWeather(day: "목", weatherStatus: "13d", minTemperature: 7, maxTemperature: 14),
                 DailyWeather(day: "금", weatherStatus: "11d", minTemperature: 11, maxTemperature: 16),
                 DailyWeather(day: "토", weatherStatus: "11d", minTemperature: 15, maxTemperature: 23)
-            ]
+            ],
+            latitude: 36.783611,
+            longitude: 127.004173
         ))
     }
 }

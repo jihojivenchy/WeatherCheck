@@ -15,6 +15,8 @@ struct WeatherData {
     let maxTemperature: Int
     let hourlyWeathers: [HourlyWeather]
     let dailyWeather: [DailyWeather]
+    let latitude: Double
+    let longitude: Double
 }
 
 struct HourlyWeather {
@@ -38,6 +40,8 @@ extension WeatherData {
         minTemperature: 0,
         maxTemperature: 0,
         hourlyWeathers: [],
-        dailyWeather: []
+        dailyWeather: [],
+        latitude: 0.0,
+        longitude: 0.0
     )
 }
