@@ -46,7 +46,7 @@ final class CurrentWeatherView: BaseView {
         return label
     }()
     
-    // MARK: - Layout
+    // MARK: - Layouts
     override func configureLayouts() {
         addSubview(cityNameLabel)
         addSubview(currentTemperatureLabel)
