@@ -7,6 +7,8 @@
 
 import UIKit
 import SnapKit
+import RxSwift
+import RxCocoa
 
 final class MainViewController: BaseViewController {
     // MARK: - UI
@@ -53,7 +55,7 @@ final class MainViewController: BaseViewController {
     
     // MARK: - Configuration
     override func configureAttributes() {
-        view.backgroundColor = .sky
+        view.backgroundColor = WCColor.skyColor
     }
     
     // MARK: - Layouts
@@ -117,6 +119,7 @@ final class MainViewController: BaseViewController {
         
         let output = viewModel.transform(input: input)
         
+        // 날씨 정보 전달받을 경우 -> 각 뷰에 데이터 뿌리기
         output.weatherData
             .drive(onNext: { [weak self] data in
                 guard let self, let data else { return }
@@ -152,7 +155,12 @@ final class MainViewController: BaseViewController {
             })
             .disposed(by: disposeBag)
         
-        
+        // 검색 팝업 이동
         goToSearchButton.rx.tap
+            .withUnretained(self)
+            .subscribe(onNext: { owner, _ in
+                print("이동")
+            })
+            .disposed(by: disposeBag)
     }
 }

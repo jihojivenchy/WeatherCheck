@@ -35,7 +35,7 @@ final class HourlyWeatherView: BaseView {
     }()
     
     override func configureAttributes() {
-        backgroundColor = .darkSky
+        backgroundColor = WCColor.darkSkyColor
         clipsToBounds = true
         layer.cornerRadius = 12
     }

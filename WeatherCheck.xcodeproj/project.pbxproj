@@ -31,7 +31,7 @@
 		7C79F03D2C3306C900DEAE3C /* WeatherResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F03C2C3306C900DEAE3C /* WeatherResponseDTO.swift */; };
 		7C79F03F2C33A13F00DEAE3C /* HourlyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F03E2C33A13F00DEAE3C /* HourlyWeatherView.swift */; };
 		7C79F0412C33A3CA00DEAE3C /* HourlyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F0402C33A3CA00DEAE3C /* HourlyWeatherCell.swift */; };
-		7C79F0452C33BCB900DEAE3C /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F0442C33BCB900DEAE3C /* UIColor+.swift */; };
+		7C79F0452C33BCB900DEAE3C /* WCColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F0442C33BCB900DEAE3C /* WCColor.swift */; };
 		7C79F0482C33C1E600DEAE3C /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F0472C33C1E600DEAE3C /* WeatherData.swift */; };
 		7C79F04C2C33C40900DEAE3C /* MockWeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F04B2C33C40900DEAE3C /* MockWeatherRepository.swift */; };
 		7C79F0502C33C45100DEAE3C /* WeatherRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F04F2C33C45100DEAE3C /* WeatherRepository.swift */; };
@@ -50,6 +50,8 @@
 		7C9E11222C3445FE00C89E92 /* SearchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E11212C3445FE00C89E92 /* SearchButton.swift */; };
 		7C9E11242C34462100C89E92 /* BaseButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E11232C34462100C89E92 /* BaseButton.swift */; };
 		7C9E11262C34489800C89E92 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E11252C34489800C89E92 /* UIImage+.swift */; };
+		7C9E11282C344B7100C89E92 /* BasePopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E11272C344B7100C89E92 /* BasePopUpView.swift */; };
+		7C9E112A2C344BAE00C89E92 /* UIWindow+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E11292C344BAE00C89E92 /* UIWindow+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -73,7 +75,7 @@
 		7C79F03C2C3306C900DEAE3C /* WeatherResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherResponseDTO.swift; sourceTree = "<group>"; };
 		7C79F03E2C33A13F00DEAE3C /* HourlyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherView.swift; sourceTree = "<group>"; };
 		7C79F0402C33A3CA00DEAE3C /* HourlyWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherCell.swift; sourceTree = "<group>"; };
-		7C79F0442C33BCB900DEAE3C /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		7C79F0442C33BCB900DEAE3C /* WCColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCColor.swift; sourceTree = "<group>"; };
 		7C79F0472C33C1E600DEAE3C /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 		7C79F04B2C33C40900DEAE3C /* MockWeatherRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockWeatherRepository.swift; sourceTree = "<group>"; };
 		7C79F04F2C33C45100DEAE3C /* WeatherRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRepository.swift; sourceTree = "<group>"; };
@@ -92,6 +94,8 @@
 		7C9E11212C3445FE00C89E92 /* SearchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchButton.swift; sourceTree = "<group>"; };
 		7C9E11232C34462100C89E92 /* BaseButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseButton.swift; sourceTree = "<group>"; };
 		7C9E11252C34489800C89E92 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
+		7C9E11272C344B7100C89E92 /* BasePopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasePopUpView.swift; sourceTree = "<group>"; };
+		7C9E11292C344BAE00C89E92 /* UIWindow+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -216,6 +220,7 @@
 				7C79F0602C33E0F500DEAE3C /* BaseTableViewCell.swift */,
 				7C79F0702C341AAB00DEAE3C /* BaseStackView.swift */,
 				7C9E11232C34462100C89E92 /* BaseButton.swift */,
+				7C9E11272C344B7100C89E92 /* BasePopUpView.swift */,
 			);
 			path = Bases;
 			sourceTree = "<group>";
@@ -227,6 +232,7 @@
 				7C79F0622C33E14600DEAE3C /* UITableView+.swift */,
 				7C79F0642C33E74D00DEAE3C /* UILabel+.swift */,
 				7C9E11252C34489800C89E92 /* UIImage+.swift */,
+				7C9E11292C344BAE00C89E92 /* UIWindow+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -292,7 +298,7 @@
 		7C79F0432C33BCAF00DEAE3C /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				7C79F0442C33BCB900DEAE3C /* UIColor+.swift */,
+				7C79F0442C33BCB900DEAE3C /* WCColor.swift */,
 			);
 			path = Foundation;
 			sourceTree = "<group>";
@@ -463,6 +469,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C9E11282C344B7100C89E92 /* BasePopUpView.swift in Sources */,
 				7C0851CE2C329E4300545907 /* BaseViewController.swift in Sources */,
 				7C0851932C32949600545907 /* AppDelegate.swift in Sources */,
 				7C79F0502C33C45100DEAE3C /* WeatherRepository.swift in Sources */,
@@ -478,7 +485,7 @@
 				7C0851CC2C329E2000545907 /* BaseView.swift in Sources */,
 				7C79F0682C33F0AC00DEAE3C /* CityLocationView.swift in Sources */,
 				7C79F06B2C34123200DEAE3C /* WeatherDetailsView.swift in Sources */,
-				7C79F0452C33BCB900DEAE3C /* UIColor+.swift in Sources */,
+				7C79F0452C33BCB900DEAE3C /* WCColor.swift in Sources */,
 				7C0851D42C329FE200545907 /* UICollectionView+.swift in Sources */,
 				7C0851D12C329EE400545907 /* BaseCollectionViewCell.swift in Sources */,
 				7C79F02E2C32CB8800DEAE3C /* SearchBar.swift in Sources */,
@@ -490,6 +497,7 @@
 				7C79F06D2C3417FA00DEAE3C /* WeatherDetailContainer.swift in Sources */,
 				7C79F05F2C33DCA200DEAE3C /* DailyWeatherCell.swift in Sources */,
 				7C0851D92C32A1C500545907 /* ViewModelType.swift in Sources */,
+				7C9E112A2C344BAE00C89E92 /* UIWindow+.swift in Sources */,
 				7C79F0712C341AAB00DEAE3C /* BaseStackView.swift in Sources */,
 				7C79F0312C32CD9600DEAE3C /* CurrentWeatherView.swift in Sources */,
 				7C79F0482C33C1E600DEAE3C /* WeatherData.swift in Sources */,
