@@ -17,14 +17,19 @@ struct WeatherData {
     let dailyWeather: [DailyWeather]
     let latitude: Double
     let longitude: Double
+    let humidity: Double   // 습도
+    let clouds: Double     // 구름
+    let windSpeed: Double  // 바람 세기
 }
 
+/// 시간 별 날씨
 struct HourlyWeather {
     let time: String
     let weatherStatus: String
     let temperature: Int
 }
 
+/// 일 별 날씨
 struct DailyWeather {
     let day: String
     let weatherStatus: String
@@ -42,6 +47,9 @@ extension WeatherData {
         hourlyWeathers: [],
         dailyWeather: [],
         latitude: 0.0,
-        longitude: 0.0
+        longitude: 0.0,
+        humidity: 0.0,
+        clouds: 0.0,
+        windSpeed: 0.0
     )
 }

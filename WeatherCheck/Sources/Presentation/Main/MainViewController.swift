@@ -21,7 +21,7 @@ final class MainViewController: BaseViewController {
     private let scrollView: UIScrollView = {
         let scrollView = UIScrollView()
         scrollView.backgroundColor = .skyColor  // TODO: - 추후 배경 이미지 넣으면 .clear로 수정
-        scrollView.alwaysBounceVertical = true
+        scrollView.showsVerticalScrollIndicator = false
         return scrollView
     }()
     
@@ -29,6 +29,7 @@ final class MainViewController: BaseViewController {
     private let hourlyWeatherView = HourlyWeatherView()
     private let dailyWeatherView = DailyWeatherView()
     private let cityLocationView = CityLocationView()
+    private let weatherDetailsView = WeatherDetailsView()
     
     // MARK: - Properties
     private let viewModel: MainViewModel
@@ -65,6 +66,7 @@ final class MainViewController: BaseViewController {
         scrollView.addSubview(hourlyWeatherView)
         scrollView.addSubview(dailyWeatherView)
         scrollView.addSubview(cityLocationView)
+        scrollView.addSubview(weatherDetailsView)
         
         scrollView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
@@ -91,6 +93,12 @@ final class MainViewController: BaseViewController {
         
         cityLocationView.snp.makeConstraints { make in
             make.top.equalTo(dailyWeatherView.snp.bottom).offset(20)
+            make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(15)
+            make.height.equalTo(360)
+        }
+        
+        weatherDetailsView.snp.makeConstraints { make in
+            make.top.equalTo(cityLocationView.snp.bottom).offset(20)
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(15)
             make.height.equalTo(360)
             make.bottom.equalToSuperview().inset(30)
@@ -129,6 +137,13 @@ final class MainViewController: BaseViewController {
                     cityName: data.cityName,
                     latitude: data.latitude,
                     longitude: data.longitude
+                )
+                
+                // 습도, 구름, 바람세기 표시
+                self.weatherDetailsView.configure(
+                    humidity: data.humidity,
+                    clouds: data.clouds,
+                    windSpeed: data.windSpeed
                 )
             })
             .disposed(by: disposeBag)

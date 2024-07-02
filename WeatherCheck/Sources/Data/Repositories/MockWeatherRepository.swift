@@ -31,7 +31,10 @@ final class MockWeatherRepository: WeatherRepository {
                 DailyWeather(day: "토", weatherStatus: "11d", minTemperature: 15, maxTemperature: 23)
             ],
             latitude: 36.783611,
-            longitude: 127.004173
+            longitude: 127.004173,
+            humidity: 56,
+            clouds: 50,
+            windSpeed: 1.97
         ))
     }
 }
