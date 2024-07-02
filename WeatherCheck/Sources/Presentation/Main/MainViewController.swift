@@ -10,11 +10,13 @@ import SnapKit
 
 final class MainViewController: BaseViewController {
     // MARK: - UI
-    private lazy var searchBar: UISearchBar = {
+    private let goToSearchButton = SearchButton()
+    
+    private let searchBar: UISearchBar = {
         let searchBar = UISearchBar()
         searchBar.placeholder = "Search"
         searchBar.tintColor = .white
-        searchBar.barTintColor = .white
+        searchBar.backgroundColor = .white
         return searchBar
     }()
 
@@ -51,18 +53,12 @@ final class MainViewController: BaseViewController {
     
     // MARK: - Configuration
     override func configureAttributes() {
-        let appearance = UINavigationBarAppearance()
-        appearance.configureWithTransparentBackground()
-        appearance.backgroundColor = .clear
-        navigationItem.standardAppearance = appearance
-        navigationItem.scrollEdgeAppearance = appearance
-        navigationItem.titleView = searchBar
-        
         view.backgroundColor = .sky
     }
     
     // MARK: - Layouts
     override func configureLayouts() {
+        view.addSubview(goToSearchButton)
         view.addSubview(scrollView)
         scrollView.addSubview(currentWeatherView)
         scrollView.addSubview(hourlyWeatherView)
@@ -70,8 +66,14 @@ final class MainViewController: BaseViewController {
         scrollView.addSubview(cityLocationView)
         scrollView.addSubview(weatherDetailsView)
         
+        goToSearchButton.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaInsets).inset(50)
+            make.left.right.equalToSuperview().inset(15)
+            make.height.equalTo(35)
+        }
+        
         scrollView.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.top.equalTo(goToSearchButton.snp.bottom).offset(10)
             make.left.right.bottom.equalToSuperview()
         }
         
@@ -149,5 +151,8 @@ final class MainViewController: BaseViewController {
                 )
             })
             .disposed(by: disposeBag)
+        
+        
+        goToSearchButton.rx.tap
     }
 }

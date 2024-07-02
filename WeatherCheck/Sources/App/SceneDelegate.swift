@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let mainViewModel = MainViewModel(fetchWeatherUseCase: fetchWeatherUseCase)
         
         window = UIWindow(windowScene: windowScene)
-        window?.rootViewController = UINavigationController(rootViewController: MainViewController(viewModel: mainViewModel))
+        window?.rootViewController = MainViewController(viewModel: mainViewModel)
         window?.makeKeyAndVisible()
     }
 
