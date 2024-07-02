@@ -14,7 +14,7 @@ final class HourlyWeatherCell: BaseCollectionViewCell {
     private let timeLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = .systemFont(ofSize: 14)
+        label.font = .boldSystemFont(ofSize: 14)
         label.textAlignment = .center
         return label
     }()
@@ -28,7 +28,7 @@ final class HourlyWeatherCell: BaseCollectionViewCell {
     private let temperatureLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
-        label.font = .boldSystemFont(ofSize: 14)
+        label.font = .boldSystemFont(ofSize: 18)
         label.textAlignment = .center
         return label
     }()
@@ -46,6 +46,7 @@ final class HourlyWeatherCell: BaseCollectionViewCell {
         weatherImageView.snp.makeConstraints { make in
             make.top.equalTo(timeLabel.snp.bottom).offset(10)
             make.horizontalEdges.equalToSuperview()
+            make.height.equalTo(40)
         }
         
         temperatureLabel.snp.makeConstraints { make in

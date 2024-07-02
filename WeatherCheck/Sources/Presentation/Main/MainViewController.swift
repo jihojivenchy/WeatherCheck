@@ -102,7 +102,7 @@ final class MainViewController: BaseViewController {
                 ))
                 
                 // 3시간 간격의 기온 표시
-                
+                self.hourlyWeatherView.configure(gustSpeed: 4, hourlyWeathers: data.hourlyWeathers)
             })
             .disposed(by: disposeBag)
     }
