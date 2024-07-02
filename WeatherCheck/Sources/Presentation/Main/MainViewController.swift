@@ -29,7 +29,13 @@ final class MainViewController: BaseViewController {
     private let hourlyWeatherView = HourlyWeatherView()
     
     // MARK: - Properties
+    private let viewModel: MainViewModel
     
+    // MARK: - Init
+    init(viewModel: MainViewModel) {
+        self.viewModel = viewModel
+        super.init()
+    }
     
     // MARK: - LifeCycle
     override func viewWillAppear(_ animated: Bool) {

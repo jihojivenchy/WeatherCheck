@@ -21,3 +21,15 @@ struct HourlyWeather {
     let weatherStatus: String
     let temperature: Int
 }
+
+
+extension WeatherData {
+    static let onError = WeatherData(
+        cityName: "찾을 수 없습니다.",
+        currentTemperature: 0,
+        weatherStatus: "오류",
+        minTemperature: 0,
+        maxTemperature: 0,
+        hourlyWeathers: []
+    )
+}
