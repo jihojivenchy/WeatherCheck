@@ -32,6 +32,7 @@
 		7C79F03F2C33A13F00DEAE3C /* HourlyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F03E2C33A13F00DEAE3C /* HourlyWeatherView.swift */; };
 		7C79F0412C33A3CA00DEAE3C /* HourlyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F0402C33A3CA00DEAE3C /* HourlyWeatherCell.swift */; };
 		7C79F0452C33BCB900DEAE3C /* UIColor+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F0442C33BCB900DEAE3C /* UIColor+.swift */; };
+		7C79F0482C33C1E600DEAE3C /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F0472C33C1E600DEAE3C /* WeatherData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +57,7 @@
 		7C79F03E2C33A13F00DEAE3C /* HourlyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherView.swift; sourceTree = "<group>"; };
 		7C79F0402C33A3CA00DEAE3C /* HourlyWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherCell.swift; sourceTree = "<group>"; };
 		7C79F0442C33BCB900DEAE3C /* UIColor+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+.swift"; sourceTree = "<group>"; };
+		7C79F0472C33C1E600DEAE3C /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -141,6 +143,7 @@
 		7C0851C72C329D5A00545907 /* Domain */ = {
 			isa = PBXGroup;
 			children = (
+				7C79F0462C33C18B00DEAE3C /* Entities */,
 			);
 			name = Domain;
 			sourceTree = "<group>";
@@ -246,6 +249,14 @@
 			path = Foundation;
 			sourceTree = "<group>";
 		};
+		7C79F0462C33C18B00DEAE3C /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				7C79F0472C33C1E600DEAE3C /* WeatherData.swift */,
+			);
+			name = Entities;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -345,6 +356,7 @@
 				7C79F0332C32CDF100DEAE3C /* BaseCollectionReusableView.swift in Sources */,
 				7C0851D92C32A1C500545907 /* ViewModelType.swift in Sources */,
 				7C79F0312C32CD9600DEAE3C /* CurrentWeatherView.swift in Sources */,
+				7C79F0482C33C1E600DEAE3C /* WeatherData.swift in Sources */,
 				7C0851DB2C32A7AD00545907 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
