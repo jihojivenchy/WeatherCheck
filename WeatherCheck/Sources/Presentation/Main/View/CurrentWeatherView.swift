@@ -1,5 +1,5 @@
 //
-//  WeatherHeaderView.swift
+//  CurrentWeatherView.swift
 //  WeatherCheck
 //
 //  Created by 엄지호 on 7/1/24.
@@ -8,8 +8,8 @@
 import UIKit
 import SnapKit
 
-/// 날씨의 정보를 알려주는 헤더뷰
-final class WeatherHeaderView: BaseCollectionReusableView {
+/// 현재 날씨 정보를 알려주는 뷰(도시 이름, 현재 날씨, 기온 등)
+final class CurrentWeatherView: BaseView {
     // MARK: - UI
     private let cityNameLabel: UILabel = {
         let label = UILabel()
@@ -46,10 +46,6 @@ final class WeatherHeaderView: BaseCollectionReusableView {
         return label
     }()
     
-    override func configureAttributes() {
-        backgroundColor = .blue
-    }
-    
     // MARK: - Layout
     override func configureLayouts() {
         addSubview(cityNameLabel)
@@ -80,7 +76,7 @@ final class WeatherHeaderView: BaseCollectionReusableView {
     
 }
 // MARK: - Configuration
-extension WeatherHeaderView {
+extension CurrentWeatherView {
     struct WeatherHeaderViewConfiguration {
         let cityName: String
         let currentTemperature: Int

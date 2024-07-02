@@ -15,17 +15,16 @@ final class MainViewController: BaseViewController {
         searchBar.placeholder = "Search"
         return searchBar
     }()
+
+    private let scrollView: UIScrollView = {
+        let scrollView = UIScrollView()
+        scrollView.backgroundColor = .blue  // TODO: - 추후 배경 이미지 넣으면 .clear로 수정
+        scrollView.alwaysBounceVertical = true
+        return scrollView
+    }()
     
-//    private lazy var collectionView: UICollectionView = {
-//        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-//        collectionView.backgroundColor = .clear
-//        collectionView.register(
-//            WeatherHeaderView.self,
-//            forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader
-//        )
-//        collectionView.showsVerticalScrollIndicator = false
-//        return collectionView
-//    }()
+    private let currentWeatherView = CurrentWeatherView()
+    
     
     // MARK: - Properties
     
@@ -42,11 +41,31 @@ final class MainViewController: BaseViewController {
     // MARK: - Configuration
     override func configureAttributes() {
         navigationItem.titleView = searchBar
+        
+        currentWeatherView.configure(.init(
+            cityName: "Seoul",
+            currentTemperature: 7,
+            weatherStatus: "맑음",
+            minTemperature: 0,
+            maxTemperature: 10
+        ))
     }
     
     // MARK: - Layouts
     override func configureLayouts() {
+        view.addSubview(scrollView)
+        scrollView.addSubview(currentWeatherView)
         
+        scrollView.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide)
+            make.left.right.bottom.equalToSuperview()
+        }
+        
+        currentWeatherView.snp.makeConstraints { make in
+            make.top.equalToSuperview()
+            make.horizontalEdges.equalTo(view.safeAreaLayoutGuide)
+            make.height.equalTo(240)
+        }
     }
     
     // MARK: - Bind
