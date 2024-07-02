@@ -27,6 +27,7 @@ final class MainViewController: BaseViewController {
     
     private let currentWeatherView = CurrentWeatherView()
     private let hourlyWeatherView = HourlyWeatherView()
+    private let dailyWeatherView = DailyWeatherView()
     
     // MARK: - Properties
     private let viewModel: MainViewModel
@@ -61,6 +62,7 @@ final class MainViewController: BaseViewController {
         view.addSubview(scrollView)
         scrollView.addSubview(currentWeatherView)
         scrollView.addSubview(hourlyWeatherView)
+        scrollView.addSubview(dailyWeatherView)
         
         scrollView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
@@ -77,6 +79,13 @@ final class MainViewController: BaseViewController {
             make.top.equalTo(currentWeatherView.snp.bottom).offset(20)
             make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(15)
             make.height.equalTo(180)
+        }
+        
+        dailyWeatherView.snp.makeConstraints { make in
+            make.top.equalTo(hourlyWeatherView.snp.bottom).offset(20)
+            make.horizontalEdges.equalTo(view.safeAreaLayoutGuide).inset(15)
+            make.height.equalTo(290)
+            make.bottom.equalToSuperview().inset(30)
         }
     }
     
@@ -103,6 +112,9 @@ final class MainViewController: BaseViewController {
                 
                 // 3시간 간격의 기온 표시
                 self.hourlyWeatherView.configure(gustSpeed: 4, hourlyWeathers: data.hourlyWeathers)
+                
+                // 5일 간의 날씨 표시
+                self.dailyWeatherView.configure(dailyWeathers: data.dailyWeather)
             })
             .disposed(by: disposeBag)
     }

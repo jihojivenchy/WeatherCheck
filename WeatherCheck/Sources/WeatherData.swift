@@ -14,6 +14,7 @@ struct WeatherData {
     let minTemperature: Int
     let maxTemperature: Int
     let hourlyWeathers: [HourlyWeather]
+    let dailyWeather: [DailyWeather]
 }
 
 struct HourlyWeather {
@@ -22,6 +23,12 @@ struct HourlyWeather {
     let temperature: Int
 }
 
+struct DailyWeather {
+    let day: String
+    let weatherStatus: String
+    let minTemperature: Int
+    let maxTemperature: Int
+}
 
 extension WeatherData {
     static let onError = WeatherData(
@@ -30,6 +37,7 @@ extension WeatherData {
         weatherStatus: "오류",
         minTemperature: 0,
         maxTemperature: 0,
-        hourlyWeathers: []
+        hourlyWeathers: [],
+        dailyWeather: []
     )
 }

@@ -38,6 +38,10 @@
 		7C79F0532C33C62800DEAE3C /* FetchWeatherUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F0522C33C62800DEAE3C /* FetchWeatherUseCase.swift */; };
 		7C79F0552C33C6C600DEAE3C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F0542C33C6C600DEAE3C /* MainViewModel.swift */; };
 		7C79F0582C33C8EB00DEAE3C /* ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F0572C33C8EB00DEAE3C /* ObservableType.swift */; };
+		7C79F05A2C33D87800DEAE3C /* DailyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F0592C33D87800DEAE3C /* DailyWeatherView.swift */; };
+		7C79F05F2C33DCA200DEAE3C /* DailyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F05E2C33DCA200DEAE3C /* DailyWeatherCell.swift */; };
+		7C79F0612C33E0F500DEAE3C /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F0602C33E0F500DEAE3C /* BaseTableViewCell.swift */; };
+		7C79F0632C33E14600DEAE3C /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F0622C33E14600DEAE3C /* UITableView+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,6 +72,10 @@
 		7C79F0522C33C62800DEAE3C /* FetchWeatherUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchWeatherUseCase.swift; sourceTree = "<group>"; };
 		7C79F0542C33C6C600DEAE3C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		7C79F0572C33C8EB00DEAE3C /* ObservableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableType.swift; sourceTree = "<group>"; };
+		7C79F0592C33D87800DEAE3C /* DailyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherView.swift; sourceTree = "<group>"; };
+		7C79F05E2C33DCA200DEAE3C /* DailyWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherCell.swift; sourceTree = "<group>"; };
+		7C79F0602C33E0F500DEAE3C /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
+		7C79F0622C33E14600DEAE3C /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -189,6 +197,7 @@
 				7C0851CD2C329E4300545907 /* BaseViewController.swift */,
 				7C0851D02C329EE400545907 /* BaseCollectionViewCell.swift */,
 				7C79F0322C32CDF100DEAE3C /* BaseCollectionReusableView.swift */,
+				7C79F0602C33E0F500DEAE3C /* BaseTableViewCell.swift */,
 			);
 			path = Bases;
 			sourceTree = "<group>";
@@ -197,6 +206,7 @@
 			isa = PBXGroup;
 			children = (
 				7C0851D32C329FE200545907 /* UICollectionView+.swift */,
+				7C79F0622C33E14600DEAE3C /* UITableView+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -224,9 +234,9 @@
 			isa = PBXGroup;
 			children = (
 				7C79F02D2C32CB8800DEAE3C /* SearchBar.swift */,
-				7C79F0302C32CD9600DEAE3C /* CurrentWeatherView.swift */,
-				7C79F03E2C33A13F00DEAE3C /* HourlyWeatherView.swift */,
-				7C79F0402C33A3CA00DEAE3C /* HourlyWeatherCell.swift */,
+				7C79F05B2C33DC7300DEAE3C /* Current */,
+				7C79F05C2C33DC7C00DEAE3C /* Hourly */,
+				7C79F05D2C33DC8B00DEAE3C /* Daily */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -302,6 +312,32 @@
 				7C79F0572C33C8EB00DEAE3C /* ObservableType.swift */,
 			);
 			path = RxExtensions;
+			sourceTree = "<group>";
+		};
+		7C79F05B2C33DC7300DEAE3C /* Current */ = {
+			isa = PBXGroup;
+			children = (
+				7C79F0302C32CD9600DEAE3C /* CurrentWeatherView.swift */,
+			);
+			path = Current;
+			sourceTree = "<group>";
+		};
+		7C79F05C2C33DC7C00DEAE3C /* Hourly */ = {
+			isa = PBXGroup;
+			children = (
+				7C79F03E2C33A13F00DEAE3C /* HourlyWeatherView.swift */,
+				7C79F0402C33A3CA00DEAE3C /* HourlyWeatherCell.swift */,
+			);
+			path = Hourly;
+			sourceTree = "<group>";
+		};
+		7C79F05D2C33DC8B00DEAE3C /* Daily */ = {
+			isa = PBXGroup;
+			children = (
+				7C79F0592C33D87800DEAE3C /* DailyWeatherView.swift */,
+				7C79F05E2C33DCA200DEAE3C /* DailyWeatherCell.swift */,
+			);
+			path = Daily;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -390,10 +426,12 @@
 				7C0851CE2C329E4300545907 /* BaseViewController.swift in Sources */,
 				7C0851932C32949600545907 /* AppDelegate.swift in Sources */,
 				7C79F0502C33C45100DEAE3C /* WeatherRepository.swift in Sources */,
+				7C79F0632C33E14600DEAE3C /* UITableView+.swift in Sources */,
 				7C79F03F2C33A13F00DEAE3C /* HourlyWeatherView.swift in Sources */,
 				7C0851952C32949600545907 /* SceneDelegate.swift in Sources */,
 				7C79F0392C32FAB000DEAE3C /* WeatherRequestDTO.swift in Sources */,
 				7C79F0582C33C8EB00DEAE3C /* ObservableType.swift in Sources */,
+				7C79F05A2C33D87800DEAE3C /* DailyWeatherView.swift in Sources */,
 				7C79F0532C33C62800DEAE3C /* FetchWeatherUseCase.swift in Sources */,
 				7C79F0412C33A3CA00DEAE3C /* HourlyWeatherCell.swift in Sources */,
 				7C0851D72C32A01A00545907 /* Reusable.swift in Sources */,
@@ -405,10 +443,12 @@
 				7C79F03D2C3306C900DEAE3C /* WeatherResponseDTO.swift in Sources */,
 				7C79F04C2C33C40900DEAE3C /* MockWeatherRepository.swift in Sources */,
 				7C79F0332C32CDF100DEAE3C /* BaseCollectionReusableView.swift in Sources */,
+				7C79F05F2C33DCA200DEAE3C /* DailyWeatherCell.swift in Sources */,
 				7C0851D92C32A1C500545907 /* ViewModelType.swift in Sources */,
 				7C79F0312C32CD9600DEAE3C /* CurrentWeatherView.swift in Sources */,
 				7C79F0482C33C1E600DEAE3C /* WeatherData.swift in Sources */,
 				7C0851DB2C32A7AD00545907 /* MainViewController.swift in Sources */,
+				7C79F0612C33E0F500DEAE3C /* BaseTableViewCell.swift in Sources */,
 				7C79F0552C33C6C600DEAE3C /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
