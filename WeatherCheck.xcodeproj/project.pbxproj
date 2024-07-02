@@ -42,6 +42,7 @@
 		7C79F05F2C33DCA200DEAE3C /* DailyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F05E2C33DCA200DEAE3C /* DailyWeatherCell.swift */; };
 		7C79F0612C33E0F500DEAE3C /* BaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F0602C33E0F500DEAE3C /* BaseTableViewCell.swift */; };
 		7C79F0632C33E14600DEAE3C /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F0622C33E14600DEAE3C /* UITableView+.swift */; };
+		7C79F0652C33E74D00DEAE3C /* UILabel+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F0642C33E74D00DEAE3C /* UILabel+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		7C79F05E2C33DCA200DEAE3C /* DailyWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyWeatherCell.swift; sourceTree = "<group>"; };
 		7C79F0602C33E0F500DEAE3C /* BaseTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewCell.swift; sourceTree = "<group>"; };
 		7C79F0622C33E14600DEAE3C /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
+		7C79F0642C33E74D00DEAE3C /* UILabel+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +209,7 @@
 			children = (
 				7C0851D32C329FE200545907 /* UICollectionView+.swift */,
 				7C79F0622C33E14600DEAE3C /* UITableView+.swift */,
+				7C79F0642C33E74D00DEAE3C /* UILabel+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -441,6 +444,7 @@
 				7C0851D12C329EE400545907 /* BaseCollectionViewCell.swift in Sources */,
 				7C79F02E2C32CB8800DEAE3C /* SearchBar.swift in Sources */,
 				7C79F03D2C3306C900DEAE3C /* WeatherResponseDTO.swift in Sources */,
+				7C79F0652C33E74D00DEAE3C /* UILabel+.swift in Sources */,
 				7C79F04C2C33C40900DEAE3C /* MockWeatherRepository.swift in Sources */,
 				7C79F0332C32CDF100DEAE3C /* BaseCollectionReusableView.swift in Sources */,
 				7C79F05F2C33DCA200DEAE3C /* DailyWeatherCell.swift in Sources */,
