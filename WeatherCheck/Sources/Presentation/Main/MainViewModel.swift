@@ -15,7 +15,7 @@ final class MainViewModel: ViewModelType {
     }
     
     struct Output {
-        let weatherData: Driver<WeatherData>
+        let weatherData: Driver<WeatherData?>
     }
     
     // MARK: - Property
@@ -29,9 +29,10 @@ final class MainViewModel: ViewModelType {
     
     // MARK: - Transformation
     func transform(input: Input) -> Output {
-        let weatherData = PublishRelay<WeatherData>()
+        let weatherData = BehaviorRelay<WeatherData?>(value: nil)
         
         input.viewDidLoad
+            .debug()
             .withUnretained(self)
             .flatMap { owner, _ in
                 owner.fetchWeatherUseCase.fetch().toResult()

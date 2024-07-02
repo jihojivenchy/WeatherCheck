@@ -53,16 +53,7 @@ final class MainViewController: BaseViewController {
         appearance.backgroundColor = .sky
         navigationItem.standardAppearance = appearance
         navigationItem.scrollEdgeAppearance = appearance
-        
         navigationItem.titleView = searchBar
-        
-        currentWeatherView.configure(.init(
-            cityName: "Seoul",
-            currentTemperature: 7,
-            weatherStatus: "맑음",
-            minTemperature: 0,
-            maxTemperature: 10
-        ))
     }
     
     // MARK: - Layouts
@@ -89,8 +80,30 @@ final class MainViewController: BaseViewController {
         }
     }
     
-    // MARK: - Bind
+    // MARK: - Binding
     override func bind() {
+        let input = MainViewModel.Input(
+            viewDidLoad: .just(())
+        )
         
+        let output = viewModel.transform(input: input)
+        
+        output.weatherData
+            .drive(onNext: { [weak self] data in
+                guard let self, let data else { return }
+                
+                // 현재 날씨 정보 표시
+                self.currentWeatherView.configure(.init(
+                    cityName: data.cityName,
+                    currentTemperature: data.currentTemperature,
+                    weatherStatus: data.weatherStatus,
+                    minTemperature: data.minTemperature,
+                    maxTemperature: data.maxTemperature
+                ))
+                
+                // 3시간 간격의 기온 표시
+                
+            })
+            .disposed(by: disposeBag)
     }
 }
