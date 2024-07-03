@@ -15,7 +15,7 @@ final class MainViewModel: ViewModelType {
     }
     
     struct Output {
-        let weatherData: Driver<WeatherData?>
+        let weather: Driver<Weather?>
     }
     
     // MARK: - Property
@@ -29,7 +29,7 @@ final class MainViewModel: ViewModelType {
     
     // MARK: - Transformation
     func transform(input: Input) -> Output {
-        let weatherData = BehaviorRelay<WeatherData?>(value: nil)
+        let weather = BehaviorRelay<Weather?>(value: nil)
         
         input.viewDidLoad
             .debug()
@@ -42,7 +42,7 @@ final class MainViewModel: ViewModelType {
             .subscribe(onNext: { owner, result in
                 switch result {
                 case .success(let data):
-                    weatherData.accept(data)
+                    weather.accept(data)
                     
                 case .failure(let error):
                     print("조회 실패")
@@ -51,7 +51,7 @@ final class MainViewModel: ViewModelType {
             .disposed(by: disposeBag)
         
         return Output(
-            weatherData: weatherData.asDriver(onErrorJustReturn: WeatherData.onError)
+            weather: weather.asDriver(onErrorJustReturn: Weather.onError)
         )
     }
 }

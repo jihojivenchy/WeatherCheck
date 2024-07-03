@@ -31,7 +31,7 @@
 		7C79F03F2C33A13F00DEAE3C /* HourlyWeatherView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F03E2C33A13F00DEAE3C /* HourlyWeatherView.swift */; };
 		7C79F0412C33A3CA00DEAE3C /* HourlyWeatherCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F0402C33A3CA00DEAE3C /* HourlyWeatherCell.swift */; };
 		7C79F0452C33BCB900DEAE3C /* WCColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F0442C33BCB900DEAE3C /* WCColor.swift */; };
-		7C79F0482C33C1E600DEAE3C /* WeatherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F0472C33C1E600DEAE3C /* WeatherData.swift */; };
+		7C79F0482C33C1E600DEAE3C /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F0472C33C1E600DEAE3C /* Weather.swift */; };
 		7C79F0532C33C62800DEAE3C /* SearchWeatherUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F0522C33C62800DEAE3C /* SearchWeatherUseCase.swift */; };
 		7C79F0552C33C6C600DEAE3C /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F0542C33C6C600DEAE3C /* MainViewModel.swift */; };
 		7C79F0582C33C8EB00DEAE3C /* ObservableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C79F0572C33C8EB00DEAE3C /* ObservableType.swift */; };
@@ -79,7 +79,7 @@
 		7C79F03E2C33A13F00DEAE3C /* HourlyWeatherView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherView.swift; sourceTree = "<group>"; };
 		7C79F0402C33A3CA00DEAE3C /* HourlyWeatherCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyWeatherCell.swift; sourceTree = "<group>"; };
 		7C79F0442C33BCB900DEAE3C /* WCColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WCColor.swift; sourceTree = "<group>"; };
-		7C79F0472C33C1E600DEAE3C /* WeatherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherData.swift; sourceTree = "<group>"; };
+		7C79F0472C33C1E600DEAE3C /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
 		7C79F0522C33C62800DEAE3C /* SearchWeatherUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWeatherUseCase.swift; sourceTree = "<group>"; };
 		7C79F0542C33C6C600DEAE3C /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		7C79F0572C33C8EB00DEAE3C /* ObservableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ObservableType.swift; sourceTree = "<group>"; };
@@ -316,8 +316,8 @@
 		7C79F0462C33C18B00DEAE3C /* Entities */ = {
 			isa = PBXGroup;
 			children = (
-				7C9E11392C34EDE500C89E92 /* Weather */,
-				7C9E113A2C34EDEB00C89E92 /* City */,
+				7C79F0472C33C1E600DEAE3C /* Weather.swift */,
+				7C9E113B2C34EE3C00C89E92 /* City.swift */,
 			);
 			name = Entities;
 			sourceTree = "<group>";
@@ -428,22 +428,6 @@
 				7C9E11372C34ED4F00C89E92 /* CitySearchResponseDTO.swift */,
 			);
 			path = Search;
-			sourceTree = "<group>";
-		};
-		7C9E11392C34EDE500C89E92 /* Weather */ = {
-			isa = PBXGroup;
-			children = (
-				7C79F0472C33C1E600DEAE3C /* WeatherData.swift */,
-			);
-			name = Weather;
-			sourceTree = "<group>";
-		};
-		7C9E113A2C34EDEB00C89E92 /* City */ = {
-			isa = PBXGroup;
-			children = (
-				7C9E113B2C34EE3C00C89E92 /* City.swift */,
-			);
-			name = City;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -563,7 +547,7 @@
 				7C9E112A2C344BAE00C89E92 /* UIWindow+.swift in Sources */,
 				7C79F0712C341AAB00DEAE3C /* BaseStackView.swift in Sources */,
 				7C79F0312C32CD9600DEAE3C /* CurrentWeatherView.swift in Sources */,
-				7C79F0482C33C1E600DEAE3C /* WeatherData.swift in Sources */,
+				7C79F0482C33C1E600DEAE3C /* Weather.swift in Sources */,
 				7C9E11222C3445FE00C89E92 /* SearchButton.swift in Sources */,
 				7C0851DB2C32A7AD00545907 /* MainViewController.swift in Sources */,
 				7C79F0612C33E0F500DEAE3C /* BaseTableViewCell.swift in Sources */,

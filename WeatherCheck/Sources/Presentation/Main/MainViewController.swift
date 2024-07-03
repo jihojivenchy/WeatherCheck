@@ -122,7 +122,7 @@ final class MainViewController: BaseViewController {
         let output = viewModel.transform(input: input)
         
         // 날씨 정보 전달받을 경우 -> 각 뷰에 데이터 뿌리기
-        output.weatherData
+        output.weather
             .drive(onNext: { [weak self] data in
                 guard let self, let data else { return }
                 
