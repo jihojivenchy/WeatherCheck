@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 final class MainCoordinator: Coordinator {
     // MARK: - Property
@@ -48,11 +49,11 @@ extension MainCoordinator {
         navigationController.pushViewController(mainVC, animated: true)
     }
     
-    func showSearchViewController(searchedDataHandler: @escaping (City) -> Void) {
+    func showSearchViewController(searchedCity: PublishSubject<City>) {
         let searchViewModel = SearchViewModel(
             coordinator: self,
             searchCityUseCase: searchCityUseCase,
-            searchedDataHandler: searchedDataHandler
+            searchedCity: searchedCity
         )
         
         let searchVC = SearchViewController(viewModel: searchViewModel)

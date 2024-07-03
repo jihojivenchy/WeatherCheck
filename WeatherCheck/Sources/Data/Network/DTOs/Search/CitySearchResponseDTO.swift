@@ -12,11 +12,21 @@ struct CitySearchResponseDTO: Decodable {
     let name: String
     let country: String
     let coordinate: CoordinateResponseDTO
+    
+    enum CodingKeys: String, CodingKey {
+        case id, name, country
+        case coordinate = "coord"
+    }
 }
 
 struct CoordinateResponseDTO: Decodable {
     let latitude: Double
     let longitude: Double
+    
+    enum CodingKeys: String, CodingKey {
+        case latitude = "lat"
+        case longitude = "lon"
+    }
 }
 
 extension CitySearchResponseDTO {

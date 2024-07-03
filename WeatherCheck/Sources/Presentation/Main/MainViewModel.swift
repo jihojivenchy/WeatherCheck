@@ -64,9 +64,7 @@ final class MainViewModel: ViewModelType {
             .debug()
             .withUnretained(self)
             .subscribe(onNext: { owner, _ in
-                owner.coordinator?.showSearchViewController(searchedDataHandler: { city in
-                    owner.searchedCity.onNext(city)
-                })
+                owner.coordinator?.showSearchViewController(searchedCity: owner.searchedCity)
             })
             .disposed(by: disposeBag)
         
