@@ -35,6 +35,8 @@ final class MainViewController: BaseViewController {
     private let cityLocationView = CityLocationView()
     private let weatherDetailsView = WeatherDetailsView()
     
+    private let searchPopUpView = CitySearchPopUpView()
+    
     // MARK: - Properties
     private let viewModel: MainViewModel
     
@@ -159,7 +161,7 @@ final class MainViewController: BaseViewController {
         goToSearchButton.rx.tap
             .withUnretained(self)
             .subscribe(onNext: { owner, _ in
-                print("이동")
+                owner.searchPopUpView.show()
             })
             .disposed(by: disposeBag)
     }
