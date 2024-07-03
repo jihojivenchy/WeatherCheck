@@ -11,22 +11,22 @@ struct CitySearchResponseDTO: Decodable {
     let id: Int
     let name: String
     let country: String
-    let coord: CoordResponseDTO
+    let coordinate: CoordinateResponseDTO
 }
 
-struct CoordResponseDTO: Decodable {
-    let lon: Double
-    let lat: Double
+struct CoordinateResponseDTO: Decodable {
+    let latitude: Double
+    let longitude: Double
 }
 
 extension CitySearchResponseDTO {
     func toEntity() -> City {
-        City(id: id, name: name, country: country, coordinate: coord.toEntity())
+        City(id: id, name: name, country: country, coordinate: coordinate.toEntity())
     }
 }
 
-extension CoordResponseDTO {
+extension CoordinateResponseDTO {
     func toEntity() -> Coordinate {
-        Coordinate(lon: lon, lat: lat)
+        Coordinate(latitude: latitude, longitude: longitude)
     }
 }

@@ -201,8 +201,8 @@
 		7C0851C62C329D5100545907 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				7C9E114F2C35115E00C89E92 /* BundleFile */,
 				7C79F0342C32F90700DEAE3C /* Network */,
+				7C9E114F2C35115E00C89E92 /* BundleFile */,
 				7C79F0492C33C37D00DEAE3C /* Repositories */,
 			);
 			path = Data;

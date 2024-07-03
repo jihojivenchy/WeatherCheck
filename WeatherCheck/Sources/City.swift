@@ -15,8 +15,8 @@ struct City {
 }
 
 struct Coordinate {
-    let lon: Double
-    let lat: Double
+    let latitude: Double
+    let longitude: Double
 }
 
 extension City: Hashable { }
