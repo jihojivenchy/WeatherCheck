@@ -12,6 +12,7 @@ final class SearchViewModel: ViewModelType {
     // MARK: - Input & Output
     struct Input {
         let searchTextChanged: Observable<String>
+        let itemSelected: Observable<Int>
     }
     
     struct Output {
@@ -37,6 +38,7 @@ final class SearchViewModel: ViewModelType {
     func transform(input: Input) -> Output {
         let cityList = BehaviorRelay<[City]>(value: [])
         
+        // 도시 검색
         input.searchTextChanged
             .debug()
             .withUnretained(self)
@@ -53,6 +55,18 @@ final class SearchViewModel: ViewModelType {
                 case .failure(let error):
                     print("조회 실패: \(error.localizedDescription)")
                 }
+            })
+            .disposed(by: disposeBag)
+        
+        // 도시 선택
+        input.itemSelected
+            .withLatestFrom(cityList) { index, currentCityList in
+                currentCityList[index]
+            }
+            .withUnretained(self)
+            .subscribe(onNext: { owner, selectedCity in
+                owner.coordinator?.searchedCity.onNext(selectedCity)
+                owner.coordinator?.dismiss()
             })
             .disposed(by: disposeBag)
         

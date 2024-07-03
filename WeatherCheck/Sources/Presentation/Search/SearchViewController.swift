@@ -67,7 +67,7 @@ final class SearchViewController: BaseViewController {
     
     // MARK: - Configuration
     override func configureAttributes() {
-        enableKeyboardHiding()
+        enableKeyboardHiding(shouldCancelTouchesInView: false)
         view.backgroundColor = WCColor.darkSkyColor
         configureDataSource()
     }
@@ -103,7 +103,8 @@ final class SearchViewController: BaseViewController {
         let input = SearchViewModel.Input(
             searchTextChanged: searchBar.rx.text.orEmpty
                 .debounce(RxTimeInterval.milliseconds(10), scheduler: MainScheduler.instance)
-                .distinctUntilChanged()
+                .distinctUntilChanged(),
+            itemSelected: cityListTableView.rx.itemSelected.map { $0.row }
         )
         
         let output = viewModel.transform(input: input)

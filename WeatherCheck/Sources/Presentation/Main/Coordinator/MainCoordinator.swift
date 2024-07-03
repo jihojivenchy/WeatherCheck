@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import RxSwift
 
 final class MainCoordinator: Coordinator {
     // MARK: - Property
@@ -17,6 +18,9 @@ final class MainCoordinator: Coordinator {
     
     private let searchWeatherUseCase: SearchWeatherUseCase
     private let searchCityUseCase: SearchCityUseCase
+    
+    /// 서칭의 결과 데이터를 메인에서 전달받을 수 있도록
+    let searchedCity = PublishSubject<City>()
     
     // MARK: - Init
     init(navigationController: UINavigationController) {

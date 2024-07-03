@@ -65,6 +65,13 @@ final class MainViewModel: ViewModelType {
             })
             .disposed(by: disposeBag)
         
+        coordinator?.searchedCity
+            .withUnretained(self)
+            .subscribe(onNext: { owner, city in
+                print(city)
+            })
+            .disposed(by: disposeBag)
+        
         return Output(
             weather: weather.asDriver(onErrorJustReturn: Weather.onError)
         )
