@@ -121,12 +121,10 @@ extension SearchViewController {
     private func configureDataSource() {
         dataSource = DataSource(
             tableView: cityListTableView
-        ) { [weak self] tableView, indexPath, item in
+        ) { tableView, indexPath, item in
             guard let cell = tableView.dequeueReusableCell(CityCell.self, for: indexPath) else {
                 return UITableViewCell()
             }
-            guard let self else { return UITableViewCell() }
-            
             cell.configure(city: item)
             return cell
         }

@@ -35,8 +35,6 @@ final class MainViewController: BaseViewController {
     private let cityLocationView = CityLocationView()
     private let weatherDetailsView = WeatherDetailsView()
     
-    private let searchPopUpView = CitySearchPopUpView()
-    
     // MARK: - Properties
     private let viewModel: MainViewModel
     
