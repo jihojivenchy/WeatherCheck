@@ -38,7 +38,7 @@ final class MockSearchRepository: SearchRepository {
         ))
     }
     
-    func searchCity() -> Observable<[City]> {
+    func searchCity(name: String) -> Observable<[City]> {
         .just([])
     }
 }

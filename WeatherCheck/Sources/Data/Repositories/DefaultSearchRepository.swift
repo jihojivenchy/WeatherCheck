@@ -10,11 +10,11 @@ import RxSwift
 
 final class DefaultSearchRepository: SearchRepository {
     // MARK: - Properties
-    private let networkService: NetworkService
+    private let bundleFileService: BundleFileService
     
     // MARK: - Init
-    init(networkService: NetworkService) {
-        self.networkService = networkService
+    init(bundleFileService: BundleFileService) {
+        self.bundleFileService = bundleFileService
     }
     
     // MARK: - Methods
@@ -22,7 +22,12 @@ final class DefaultSearchRepository: SearchRepository {
         .just(Weather.onError)
     }
     
-    func searchCity() -> Observable<[City]> {
-        .just([])
+    func searchCity(name: String) -> Observable<[City]> {
+        return bundleFileService.fetchData(fromResource: "reduced_citylist", ofType: "json")
+            .decode(type: [CitySearchResponseDTO].self, decoder: JSONDecoder())
+            .map { dtos in dtos.filter { $0.name == name }}
+            .map { dtos in
+                dtos.map { $0.toEntity() }
+            }
     }
 }

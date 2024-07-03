@@ -18,3 +18,15 @@ struct CoordResponseDTO: Decodable {
     let lon: Double
     let lat: Double
 }
+
+extension CitySearchResponseDTO {
+    func toEntity() -> City {
+        City(id: id, name: name, country: country, coordinate: coord.toEntity())
+    }
+}
+
+extension CoordResponseDTO {
+    func toEntity() -> Coordinate {
+        Coordinate(lon: lon, lat: lat)
+    }
+}

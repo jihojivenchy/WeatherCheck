@@ -15,8 +15,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let searchRepository = MockSearchRepository()
+        let bundleFileService = DefaultBundleFileService()
+        let searchRepository = DefaultSearchRepository(bundleFileService: bundleFileService)
         let searchWeatherUseCase = DefaultSearchWeatherUseCase(searchRepository: searchRepository)
+        let searchCityUseCase = DefaultSearchCityUseCase(searchRepository: searchRepository)
         let mainViewModel = MainViewModel(searchWeatherUseCase: searchWeatherUseCase)
         
         window = UIWindow(windowScene: windowScene)
