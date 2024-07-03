@@ -53,6 +53,8 @@
 		7C9E112A2C344BAE00C89E92 /* UIWindow+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E11292C344BAE00C89E92 /* UIWindow+.swift */; };
 		7C9E112D2C344F7B00C89E92 /* CitySearchPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E112C2C344F7B00C89E92 /* CitySearchPopUpView.swift */; };
 		7C9E11302C34E8E800C89E92 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E112F2C34E8E800C89E92 /* SearchViewController.swift */; };
+		7C9E11342C34EC1700C89E92 /* citylist.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C9E11332C34EC1700C89E92 /* citylist.json */; };
+		7C9E11382C34ED4F00C89E92 /* CitySearchResponseDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E11372C34ED4F00C89E92 /* CitySearchResponseDTO.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -98,6 +100,8 @@
 		7C9E11292C344BAE00C89E92 /* UIWindow+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIWindow+.swift"; sourceTree = "<group>"; };
 		7C9E112C2C344F7B00C89E92 /* CitySearchPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchPopUpView.swift; sourceTree = "<group>"; };
 		7C9E112F2C34E8E800C89E92 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		7C9E11332C34EC1700C89E92 /* citylist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = citylist.json; path = ../../../../citylist.json; sourceTree = "<group>"; };
+		7C9E11372C34ED4F00C89E92 /* CitySearchResponseDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchResponseDTO.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,6 +149,7 @@
 		7C0851C32C329CEE00545907 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				7C9E11332C34EC1700C89E92 /* citylist.json */,
 				7C08519D2C32949800545907 /* LaunchScreen.storyboard */,
 				7C08519B2C32949800545907 /* Assets.xcassets */,
 				7C0851A02C32949800545907 /* Info.plist */,
@@ -284,8 +289,8 @@
 		7C79F0372C32F92600DEAE3C /* DTOs */ = {
 			isa = PBXGroup;
 			children = (
-				7C79F0382C32FAB000DEAE3C /* WeatherRequestDTO.swift */,
-				7C79F03C2C3306C900DEAE3C /* WeatherResponseDTO.swift */,
+				7C9E11352C34ED2800C89E92 /* Weather */,
+				7C9E11362C34ED3200C89E92 /* Search */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -405,6 +410,23 @@
 			path = Search;
 			sourceTree = "<group>";
 		};
+		7C9E11352C34ED2800C89E92 /* Weather */ = {
+			isa = PBXGroup;
+			children = (
+				7C79F0382C32FAB000DEAE3C /* WeatherRequestDTO.swift */,
+				7C79F03C2C3306C900DEAE3C /* WeatherResponseDTO.swift */,
+			);
+			path = Weather;
+			sourceTree = "<group>";
+		};
+		7C9E11362C34ED3200C89E92 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				7C9E11372C34ED4F00C89E92 /* CitySearchResponseDTO.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -478,6 +500,7 @@
 			files = (
 				7C08519F2C32949800545907 /* LaunchScreen.storyboard in Resources */,
 				7C08519C2C32949800545907 /* Assets.xcassets in Resources */,
+				7C9E11342C34EC1700C89E92 /* citylist.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -513,6 +536,7 @@
 				7C79F0652C33E74D00DEAE3C /* UILabel+.swift in Sources */,
 				7C79F04C2C33C40900DEAE3C /* MockWeatherRepository.swift in Sources */,
 				7C9E11262C34489800C89E92 /* UIImage+.swift in Sources */,
+				7C9E11382C34ED4F00C89E92 /* CitySearchResponseDTO.swift in Sources */,
 				7C79F0332C32CDF100DEAE3C /* BaseCollectionReusableView.swift in Sources */,
 				7C79F06D2C3417FA00DEAE3C /* WeatherDetailContainer.swift in Sources */,
 				7C79F05F2C33DCA200DEAE3C /* DailyWeatherCell.swift in Sources */,
