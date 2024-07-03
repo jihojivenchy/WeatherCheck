@@ -55,3 +55,10 @@ final class SearchViewModel: ViewModelType {
         )
     }
 }
+
+// MARK: - UI DataSource
+extension SearchViewModel {
+    enum Section: CaseIterable {
+        case main
+    }
+}

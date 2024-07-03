@@ -25,7 +25,7 @@ final class DefaultSearchRepository: SearchRepository {
     func searchCity(name: String) -> Observable<[City]> {
         return bundleFileService.fetchData(fromResource: "reduced_citylist", ofType: "json")
             .decode(type: [CitySearchResponseDTO].self, decoder: JSONDecoder())
-            .map { dtos in dtos.filter { $0.name == name }}
+            .map { dtos in dtos.filter { !$0.name.isEmpty && $0.name == name }}
             .map { dtos in
                 dtos.map { $0.toEntity() }
             }

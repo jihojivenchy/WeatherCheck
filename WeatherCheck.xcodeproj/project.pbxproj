@@ -63,6 +63,7 @@
 		7C9E11552C35167000C89E92 /* BundleFileError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E11542C35167000C89E92 /* BundleFileError.swift */; };
 		7C9E11572C351A5300C89E92 /* reduced_citylist.json in Resources */ = {isa = PBXBuildFile; fileRef = 7C9E11562C351A5300C89E92 /* reduced_citylist.json */; };
 		7C9E11592C351C2200C89E92 /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E11582C351C2200C89E92 /* SearchViewModel.swift */; };
+		7C9E115B2C3524D000C89E92 /* CityListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E115A2C3524D000C89E92 /* CityListCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -118,6 +119,7 @@
 		7C9E11542C35167000C89E92 /* BundleFileError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BundleFileError.swift; sourceTree = "<group>"; };
 		7C9E11562C351A5300C89E92 /* reduced_citylist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = reduced_citylist.json; sourceTree = "<group>"; };
 		7C9E11582C351C2200C89E92 /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
+		7C9E115A2C3524D000C89E92 /* CityListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityListCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -428,6 +430,7 @@
 			children = (
 				7C9E11582C351C2200C89E92 /* SearchViewModel.swift */,
 				7C9E112F2C34E8E800C89E92 /* SearchViewController.swift */,
+				7C9E115C2C35250100C89E92 /* Views */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -473,6 +476,14 @@
 				7C9E11522C35120300C89E92 /* DefaultFileService.swift */,
 			);
 			path = BundleFile;
+			sourceTree = "<group>";
+		};
+		7C9E115C2C35250100C89E92 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7C9E115A2C3524D000C89E92 /* CityListCell.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -561,6 +572,7 @@
 			files = (
 				7C9E11442C34F25800C89E92 /* DefaultSearchRepository.swift in Sources */,
 				7C9E11282C344B7100C89E92 /* BasePopUpView.swift in Sources */,
+				7C9E115B2C3524D000C89E92 /* CityListCell.swift in Sources */,
 				7C0851CE2C329E4300545907 /* BaseViewController.swift in Sources */,
 				7C0851932C32949600545907 /* AppDelegate.swift in Sources */,
 				7C9E11302C34E8E800C89E92 /* SearchViewController.swift in Sources */,

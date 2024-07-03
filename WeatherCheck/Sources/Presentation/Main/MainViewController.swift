@@ -46,15 +46,6 @@ final class MainViewController: BaseViewController {
         super.init()
     }
     
-    // MARK: - LifeCycle
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
-    
     // MARK: - Configuration
     override func configureAttributes() {
         view.backgroundColor = WCColor.skyColor
@@ -161,7 +152,13 @@ final class MainViewController: BaseViewController {
         goToSearchButton.rx.tap
             .withUnretained(self)
             .subscribe(onNext: { owner, _ in
-                owner.searchPopUpView.show()
+                let bundleFileService = DefaultBundleFileService()
+                let searchRepository = DefaultSearchRepository(bundleFileService: bundleFileService)
+                let searchCityUseCase = DefaultSearchCityUseCase(searchRepository: searchRepository)
+                
+                let viewModel = SearchViewModel(searchCityUseCase: searchCityUseCase)
+                let vc = SearchViewController(viewModel: viewModel)
+                owner.present(vc, animated: true)
             })
             .disposed(by: disposeBag)
     }
