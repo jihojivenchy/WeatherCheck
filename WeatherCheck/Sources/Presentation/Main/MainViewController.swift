@@ -46,6 +46,7 @@ final class MainViewController: BaseViewController {
     
     // MARK: - Configuration
     override func configureAttributes() {
+        navigationController?.navigationBar.isHidden = true
         view.backgroundColor = WCColor.skyColor
     }
     
@@ -105,7 +106,8 @@ final class MainViewController: BaseViewController {
     // MARK: - Binding
     override func bind() {
         let input = MainViewModel.Input(
-            viewDidLoad: .just(())
+            viewDidLoad: .just(()),
+            goToSearchButtonTapped: goToSearchButton.rx.tap
         )
         
         let output = viewModel.transform(input: input)
@@ -143,20 +145,6 @@ final class MainViewController: BaseViewController {
                     clouds: data.clouds,
                     windSpeed: data.windSpeed
                 )
-            })
-            .disposed(by: disposeBag)
-        
-        // 검색 팝업 이동
-        goToSearchButton.rx.tap
-            .withUnretained(self)
-            .subscribe(onNext: { owner, _ in
-                let bundleFileService = DefaultBundleFileService()
-                let searchRepository = DefaultSearchRepository(bundleFileService: bundleFileService)
-                let searchCityUseCase = DefaultSearchCityUseCase(searchRepository: searchRepository)
-                
-                let viewModel = SearchViewModel(searchCityUseCase: searchCityUseCase)
-                let vc = SearchViewController(viewModel: viewModel)
-                owner.present(vc, animated: true)
             })
             .disposed(by: disposeBag)
     }

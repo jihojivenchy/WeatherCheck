@@ -39,17 +39,23 @@ final class MainCoordinator: Coordinator {
 // MARK: - Show
 extension MainCoordinator {
     func showMainViewController() {
-        let mainViewModel = MainViewModel(searchWeatherUseCase: searchWeatherUseCase)
+        let mainViewModel = MainViewModel(
+            coordinator: self,
+            searchWeatherUseCase: searchWeatherUseCase
+        )
         
         let mainVC = MainViewController(viewModel: mainViewModel)
         navigationController.pushViewController(mainVC, animated: true)
     }
     
     func showSearchViewController() {
-        let searchViewModel = SearchViewModel(searchCityUseCase: searchCityUseCase)
+        let searchViewModel = SearchViewModel(
+            coordinator: self,
+            searchCityUseCase: searchCityUseCase
+        )
         
         let searchVC = SearchViewController(viewModel: searchViewModel)
-        navigationController.pushViewController(searchVC, animated: true)
+        navigationController.present(searchVC, animated: true)
     }
 }
 

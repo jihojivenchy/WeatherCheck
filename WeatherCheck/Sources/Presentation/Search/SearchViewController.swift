@@ -67,6 +67,7 @@ final class SearchViewController: BaseViewController {
     
     // MARK: - Configuration
     override func configureAttributes() {
+        enableKeyboardHiding()
         view.backgroundColor = WCColor.darkSkyColor
         configureDataSource()
     }

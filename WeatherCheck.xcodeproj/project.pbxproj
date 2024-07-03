@@ -64,6 +64,7 @@
 		7C9E115F2C35541600C89E92 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E115E2C35541600C89E92 /* Coordinator.swift */; };
 		7C9E11612C3554F500C89E92 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E11602C3554F500C89E92 /* AppCoordinator.swift */; };
 		7C9E11642C35564600C89E92 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E11632C35564600C89E92 /* MainCoordinator.swift */; };
+		7C9E11662C355EA300C89E92 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E11652C355EA300C89E92 /* UIViewController+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -120,6 +121,7 @@
 		7C9E115E2C35541600C89E92 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		7C9E11602C3554F500C89E92 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		7C9E11632C35564600C89E92 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
+		7C9E11652C355EA300C89E92 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -259,6 +261,7 @@
 				7C79F0622C33E14600DEAE3C /* UITableView+.swift */,
 				7C79F0642C33E74D00DEAE3C /* UILabel+.swift */,
 				7C9E11252C34489800C89E92 /* UIImage+.swift */,
+				7C9E11652C355EA300C89E92 /* UIViewController+.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -585,6 +588,7 @@
 				7C9E11302C34E8E800C89E92 /* SearchViewController.swift in Sources */,
 				7C79F0632C33E14600DEAE3C /* UITableView+.swift in Sources */,
 				7C9E113C2C34EE3C00C89E92 /* City.swift in Sources */,
+				7C9E11662C355EA300C89E92 /* UIViewController+.swift in Sources */,
 				7C79F03F2C33A13F00DEAE3C /* HourlyWeatherView.swift in Sources */,
 				7C9E11512C3511B600C89E92 /* BundleFileService.swift in Sources */,
 				7C0851952C32949600545907 /* SceneDelegate.swift in Sources */,

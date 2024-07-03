@@ -12,6 +12,7 @@ final class MainViewModel: ViewModelType {
     // MARK: - Input & Output
     struct Input {
         let viewDidLoad: Observable<Void>
+        let goToSearchButtonTapped: ControlEvent<Void>
     }
     
     struct Output {
@@ -20,10 +21,16 @@ final class MainViewModel: ViewModelType {
     
     // MARK: - Property
     let disposeBag = DisposeBag()
+    private weak var coordinator: MainCoordinator?
+    
     private let searchWeatherUseCase: SearchWeatherUseCase
     
     // MARK: - Init
-    init(searchWeatherUseCase: SearchWeatherUseCase) {
+    init(
+        coordinator: MainCoordinator,
+        searchWeatherUseCase: SearchWeatherUseCase
+    ) {
+        self.coordinator = coordinator
         self.searchWeatherUseCase = searchWeatherUseCase
     }
     
@@ -45,8 +52,16 @@ final class MainViewModel: ViewModelType {
                     weather.accept(data)
                     
                 case .failure(let error):
-                    print("조회 실패")
+                    print("조회 실패: \(error.localizedDescription)")
                 }
+            })
+            .disposed(by: disposeBag)
+        
+        input.goToSearchButtonTapped
+            .debug()
+            .withUnretained(self)
+            .subscribe(onNext: { owner, _ in
+                owner.coordinator?.showSearchViewController()
             })
             .disposed(by: disposeBag)
         

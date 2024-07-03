@@ -20,10 +20,16 @@ final class SearchViewModel: ViewModelType {
     
     // MARK: - Property
     let disposeBag = DisposeBag()
+    private weak var coordinator: MainCoordinator?
+    
     private let searchCityUseCase: SearchCityUseCase
     
     // MARK: - Init
-    init(searchCityUseCase: SearchCityUseCase) {
+    init(
+        coordinator: MainCoordinator,
+        searchCityUseCase: SearchCityUseCase
+    ) {
+        self.coordinator = coordinator
         self.searchCityUseCase = searchCityUseCase
     }
     
