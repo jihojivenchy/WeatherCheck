@@ -101,7 +101,7 @@ final class SearchViewController: BaseViewController {
     override func bind() {
         let input = SearchViewModel.Input(
             searchTextChanged: searchBar.rx.text.orEmpty
-                .debounce(RxTimeInterval.milliseconds(5), scheduler: MainScheduler.instance)
+                .debounce(RxTimeInterval.milliseconds(10), scheduler: MainScheduler.instance)
                 .distinctUntilChanged()
         )
         

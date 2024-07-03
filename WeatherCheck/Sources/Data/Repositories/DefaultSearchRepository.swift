@@ -24,8 +24,12 @@ final class DefaultSearchRepository: SearchRepository {
     
     func searchCity(name: String) -> Observable<[City]> {
         return bundleFileService.fetchData(fromResource: "reduced_citylist", ofType: "json")
+            .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))  // 백그라운드 스레드에서 데이터 처리
             .decode(type: [CitySearchResponseDTO].self, decoder: JSONDecoder())
-            .map { dtos in dtos.filter { !$0.name.isEmpty && $0.name == name }}
+            .map { dtos in 
+                dtos.filter { !$0.name.isEmpty && $0.name.lowercased().contains(name.lowercased()) }
+                    .prefix(20)
+            }
             .map { dtos in
                 dtos.map { $0.toEntity() }
             }
