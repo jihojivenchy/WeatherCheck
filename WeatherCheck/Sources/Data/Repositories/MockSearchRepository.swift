@@ -1,14 +1,14 @@
 //
-//  MockWeatherRepository.swift
+//  MockSearchRepository.swift
 //  WeatherCheck
 //
-//  Created by 엄지호 on 7/2/24.
+//  Created by 엄지호 on 7/3/24.
 //
 
 import RxSwift
 
-final class MockWeatherRepository: WeatherRepository {
-    func fetchWeatherData() -> Observable<WeatherData> {
+final class MockSearchRepository: SearchRepository {
+    func searchWeather() -> Observable<WeatherData> {
         .just(WeatherData(
             cityName: "Seoul",
             currentTemperature: 7,
@@ -22,7 +22,7 @@ final class MockWeatherRepository: WeatherRepository {
                 HourlyWeather(time: "오후 5시", weatherStatus: "01d", temperature: 17),
                 HourlyWeather(time: "오후 8시", weatherStatus: "01d", temperature: 14),
                 HourlyWeather(time: "오후 11시", weatherStatus: "01d", temperature: 11),
-            ], 
+            ],
             dailyWeather: [
                 DailyWeather(day: "오늘", weatherStatus: "13d", minTemperature: -7, maxTemperature: 7),
                 DailyWeather(day: "수", weatherStatus: "13d", minTemperature: -7, maxTemperature: 7),
@@ -36,5 +36,9 @@ final class MockWeatherRepository: WeatherRepository {
             clouds: 50,
             windSpeed: 1.97
         ))
+    }
+    
+    func searchCity() -> Observable<[City]> {
+        .just([])
     }
 }

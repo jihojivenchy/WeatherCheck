@@ -20,11 +20,11 @@ final class MainViewModel: ViewModelType {
     
     // MARK: - Property
     let disposeBag = DisposeBag()
-    private let fetchWeatherUseCase: FetchWeatherUseCase
+    private let searchWeatherUseCase: SearchWeatherUseCase
     
     // MARK: - Init
-    init(fetchWeatherUseCase: FetchWeatherUseCase) {
-        self.fetchWeatherUseCase = fetchWeatherUseCase
+    init(searchWeatherUseCase: SearchWeatherUseCase) {
+        self.searchWeatherUseCase = searchWeatherUseCase
     }
     
     // MARK: - Transformation
@@ -35,7 +35,7 @@ final class MainViewModel: ViewModelType {
             .debug()
             .withUnretained(self)
             .flatMap { owner, _ in
-                owner.fetchWeatherUseCase.fetch().toResult()
+                owner.searchWeatherUseCase.search().toResult()
             }
             .observe(on: MainScheduler.instance)
             .withUnretained(self)

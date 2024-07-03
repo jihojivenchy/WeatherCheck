@@ -15,9 +15,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
-        let weatherRepository = MockWeatherRepository()
-        let fetchWeatherUseCase = DefaultFetchWeatherUseCase(weatherRepository: weatherRepository)
-        let mainViewModel = MainViewModel(fetchWeatherUseCase: fetchWeatherUseCase)
+        let searchRepository = MockSearchRepository()
+        let searchWeatherUseCase = DefaultSearchWeatherUseCase(searchRepository: searchRepository)
+        let mainViewModel = MainViewModel(searchWeatherUseCase: searchWeatherUseCase)
         
         window = UIWindow(windowScene: windowScene)
         window?.rootViewController = MainViewController(viewModel: mainViewModel)
