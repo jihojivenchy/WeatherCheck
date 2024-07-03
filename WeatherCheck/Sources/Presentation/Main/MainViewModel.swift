@@ -24,6 +24,7 @@ final class MainViewModel: ViewModelType {
     private weak var coordinator: MainCoordinator?
     
     private let searchWeatherUseCase: SearchWeatherUseCase
+    private let searchedCity = PublishSubject<City>()  // 검색 결과 이벤트를 받는 서브젝트
     
     // MARK: - Init
     init(
@@ -38,6 +39,7 @@ final class MainViewModel: ViewModelType {
     func transform(input: Input) -> Output {
         let weather = BehaviorRelay<Weather?>(value: nil)
         
+        // 초기 날씨 조회
         input.viewDidLoad
             .debug()
             .withUnretained(self)
@@ -57,15 +59,19 @@ final class MainViewModel: ViewModelType {
             })
             .disposed(by: disposeBag)
         
+        // 도시 검색으로 이동
         input.goToSearchButtonTapped
             .debug()
             .withUnretained(self)
             .subscribe(onNext: { owner, _ in
-                owner.coordinator?.showSearchViewController()
+                owner.coordinator?.showSearchViewController(searchedDataHandler: { city in
+                    owner.searchedCity.onNext(city)
+                })
             })
             .disposed(by: disposeBag)
         
-        coordinator?.searchedCity
+        // 검색된 도시의 날씨 조회
+        searchedCity
             .withUnretained(self)
             .subscribe(onNext: { owner, city in
                 print(city)

@@ -24,14 +24,17 @@ final class SearchViewModel: ViewModelType {
     private weak var coordinator: MainCoordinator?
     
     private let searchCityUseCase: SearchCityUseCase
+    private let searchedDataHandler: (City) -> Void
     
     // MARK: - Init
     init(
         coordinator: MainCoordinator,
-        searchCityUseCase: SearchCityUseCase
+        searchCityUseCase: SearchCityUseCase,
+        searchedDataHandler: @escaping (City) -> Void
     ) {
         self.coordinator = coordinator
         self.searchCityUseCase = searchCityUseCase
+        self.searchedDataHandler = searchedDataHandler
     }
     
     // MARK: - Transformation
@@ -65,7 +68,7 @@ final class SearchViewModel: ViewModelType {
             }
             .withUnretained(self)
             .subscribe(onNext: { owner, selectedCity in
-                owner.coordinator?.searchedCity.onNext(selectedCity)
+                owner.searchedDataHandler(selectedCity)
                 owner.coordinator?.dismiss()
             })
             .disposed(by: disposeBag)
