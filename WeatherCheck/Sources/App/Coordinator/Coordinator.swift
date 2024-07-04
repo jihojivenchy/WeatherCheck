@@ -11,7 +11,7 @@ protocol CoordinatorDelegate: AnyObject {
     func didFinish(childCoordinator: Coordinator)
 }
 
-protocol Coordinator: AnyObject {
+protocol Coordinator: AnyObject, Alertable {
     var delegate: CoordinatorDelegate? { get set }
     var navigationController: UINavigationController { get set }
     var childCoordinators: [Coordinator] { get set }
@@ -33,5 +33,16 @@ extension Coordinator {
     
     func dismiss() {
         navigationController.dismiss(animated: true)
+    }
+}
+
+// MARK: - Alert
+extension Coordinator {
+    func showErrorAlert(configuration: ErrorAlertConfiguration) {
+        if let presentedViewContoller = navigationController.presentedViewController {
+            showErrorAlert(target: presentedViewContoller, configuration: configuration)
+        } else {
+            showErrorAlert(target: navigationController, configuration: configuration)
+        }
     }
 }
