@@ -4,13 +4,13 @@
 <img src = "https://github.com/jihojivenchy/WeatherCheck/assets/99619107/e57f07ed-9368-4036-907b-885547f6568a" height = 600>
 용량 문제로 저화질일 수 있다는 점 양해부탁드립니다:)
 
-<br>
 
 ### 배경 날씨를 적용한 경우 영상
 <img src = "https://github.com/jihojivenchy/WeatherCheck/assets/99619107/579faa1c-2e19-47d5-b884-eecea8683c1b" height = 600>
-날씨 상태에 따라 배경 이미지를 교체할 수 있지만, 디자인 상 완벽하지 않아 사용하지 않았습니다.
 
-<br>
+
+
+### <br>
 
 # 아키텍처
 1. 클린아키텍처
