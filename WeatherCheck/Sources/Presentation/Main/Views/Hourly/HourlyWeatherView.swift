@@ -88,7 +88,7 @@ final class HourlyWeatherView: BaseView {
 // MARK: - Configuration
 extension HourlyWeatherView {
     func configure(gustSpeed: Int, hourlyWeathers: [HourlyWeather]) {
-        gustSpeedLabel.text = "돌풍의 풍속은 최대 \(gustSpeed)m/s입니다."  // TODO: - 돌풍 풍속 정보 받아오기
+        gustSpeedLabel.text = "돌풍의 풍속은 최대 \(gustSpeed)m/s입니다."
         self.hourlyWeathers.onNext(hourlyWeathers)
     }
 }

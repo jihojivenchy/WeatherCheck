@@ -80,7 +80,7 @@ final class DailyWeatherView: BaseView {
             )) { _, element, cell in
                 cell.configure(.init(
                     dayOfWeek: element.dayOfWeek,
-                    weatherStatus: element.iconID,
+                    iconID: element.iconID,
                     minTemperature: element.minTemperature,
                     maxTemperature: element.maxTemperature
                 ))
