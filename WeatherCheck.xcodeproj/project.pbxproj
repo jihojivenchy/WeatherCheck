@@ -75,6 +75,7 @@
 		7C9E117F2C36B35E00C89E92 /* ErrorAlertConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E117E2C36B35E00C89E92 /* ErrorAlertConfiguration.swift */; };
 		7C9E11812C36B38B00C89E92 /* Alertable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E11802C36B38B00C89E92 /* Alertable.swift */; };
 		7C9E11832C36B3E500C89E92 /* ErrorAlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E11822C36B3E500C89E92 /* ErrorAlertViewController.swift */; };
+		7C9E11882C36D0E400C89E92 /* APIKeyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E11872C36D0E400C89E92 /* APIKeyManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -142,6 +143,8 @@
 		7C9E117E2C36B35E00C89E92 /* ErrorAlertConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertConfiguration.swift; sourceTree = "<group>"; };
 		7C9E11802C36B38B00C89E92 /* Alertable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alertable.swift; sourceTree = "<group>"; };
 		7C9E11822C36B3E500C89E92 /* ErrorAlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorAlertViewController.swift; sourceTree = "<group>"; };
+		7C9E11842C36CDA900C89E92 /* Secrets.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Secrets.xcconfig; sourceTree = "<group>"; };
+		7C9E11872C36D0E400C89E92 /* APIKeyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKeyManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +167,7 @@
 		7C0851862C32949600545907 = {
 			isa = PBXGroup;
 			children = (
+				7C9E11842C36CDA900C89E92 /* Secrets.xcconfig */,
 				7C0851912C32949600545907 /* WeatherCheck */,
 				7C0851902C32949600545907 /* Products */,
 			);
@@ -222,6 +226,7 @@
 		7C0851C62C329D5100545907 /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				7C9E11852C36D0B900C89E92 /* APIKeyManager */,
 				7C79F0342C32F90700DEAE3C /* Network */,
 				7C9E114F2C35115E00C89E92 /* BundleFile */,
 				7C79F0492C33C37D00DEAE3C /* Repositories */,
@@ -567,6 +572,14 @@
 			path = Alert;
 			sourceTree = "<group>";
 		};
+		7C9E11852C36D0B900C89E92 /* APIKeyManager */ = {
+			isa = PBXGroup;
+			children = (
+				7C9E11872C36D0E400C89E92 /* APIKeyManager.swift */,
+			);
+			path = APIKeyManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -675,6 +688,7 @@
 				7C79F0682C33F0AC00DEAE3C /* CityLocationView.swift in Sources */,
 				7C9E11422C34EFE200C89E92 /* MockSearchRepository.swift in Sources */,
 				7C9E11492C34F95600C89E92 /* SearchCityUseCase.swift in Sources */,
+				7C9E11882C36D0E400C89E92 /* APIKeyManager.swift in Sources */,
 				7C79F06B2C34123200DEAE3C /* WeatherDetailsView.swift in Sources */,
 				7C79F0452C33BCB900DEAE3C /* WCColor.swift in Sources */,
 				7C0851D42C329FE200545907 /* UICollectionView+.swift in Sources */,
@@ -848,6 +862,7 @@
 		};
 		7C0851A42C32949800545907 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C9E11842C36CDA900C89E92 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -877,6 +892,7 @@
 		};
 		7C0851A52C32949800545907 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C9E11842C36CDA900C89E92 /* Secrets.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

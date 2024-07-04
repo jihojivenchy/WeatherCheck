@@ -9,7 +9,6 @@ import Foundation
 import RxCocoa
 import RxSwift
 
-// TODO: - 알라모파이어 적용 생각하기
 final class DefaultNetworkService: NetworkService {
     func request(to endpoint: Endpoint) -> Observable<Data> {
         guard let request = endpoint.toURLRequest() else { return .error(NetworkError.invalidRequest) }

@@ -67,7 +67,7 @@ extension DailyWeatherCell {
     
     func configure(_ configuration: DailyWeatherCellConfiguration) {
         dayOfWeekLabel.text = configuration.dayOfWeek
-        weatherImageView.image = UIImage(named: findImageName(for: configuration.iconID))  // TODO: - 이미지 변환 처리
+        weatherImageView.image = UIImage(named: findImageName(for: configuration.iconID))
         temperatureLabel.highlightedTextColor(
             text: "최소: \(configuration.minTemperature)\u{00B0}   최대: \(configuration.maxTemperature)\u{00B0}",
             highlightedText: "최소: \(configuration.minTemperature)\u{00B0}"
