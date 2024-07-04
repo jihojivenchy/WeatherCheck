@@ -9,5 +9,5 @@ import Foundation
 import RxSwift
 
 protocol NetworkService {
-    func request() -> Observable<Data>
+    func request(to endpoint: Endpoint) -> Observable<Data>
 }
