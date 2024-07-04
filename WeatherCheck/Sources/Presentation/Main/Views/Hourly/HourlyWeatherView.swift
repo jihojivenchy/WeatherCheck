@@ -77,7 +77,7 @@ final class HourlyWeatherView: BaseView {
             )) { _, element, cell in
                 cell.configure(.init(
                     time: element.time,
-                    weatherStatus: element.weatherStatus,
+                    iconID: element.iconID,
                     temperature: element.temperature
                 ))
                 

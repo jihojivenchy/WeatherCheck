@@ -70,6 +70,8 @@
 		7C9E116F2C36603E00C89E92 /* WeatherEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E116E2C36603E00C89E92 /* WeatherEndpoint.swift */; };
 		7C9E11712C36621800C89E92 /* DefaultNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E11702C36621800C89E92 /* DefaultNetworkService.swift */; };
 		7C9E11732C36624400C89E92 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E11722C36624400C89E92 /* NetworkError.swift */; };
+		7C9E11762C36753600C89E92 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E11752C36753600C89E92 /* String+.swift */; };
+		7C9E11782C367A0100C89E92 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E11772C367A0100C89E92 /* Date+.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -132,6 +134,8 @@
 		7C9E116E2C36603E00C89E92 /* WeatherEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherEndpoint.swift; sourceTree = "<group>"; };
 		7C9E11702C36621800C89E92 /* DefaultNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultNetworkService.swift; sourceTree = "<group>"; };
 		7C9E11722C36624400C89E92 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		7C9E11752C36753600C89E92 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
+		7C9E11772C367A0100C89E92 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +198,7 @@
 				7C0851C62C329D5100545907 /* Data */,
 				7C0851C72C329D5A00545907 /* Domain */,
 				7C0851C82C329D6B00545907 /* Presentation */,
+				7C9E11742C36751A00C89E92 /* Utills */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -536,6 +541,15 @@
 			path = Protocols;
 			sourceTree = "<group>";
 		};
+		7C9E11742C36751A00C89E92 /* Utills */ = {
+			isa = PBXGroup;
+			children = (
+				7C9E11752C36753600C89E92 /* String+.swift */,
+				7C9E11772C367A0100C89E92 /* Date+.swift */,
+			);
+			path = Utills;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -627,6 +641,8 @@
 				7C9E11302C34E8E800C89E92 /* SearchViewController.swift in Sources */,
 				7C79F0632C33E14600DEAE3C /* UITableView+.swift in Sources */,
 				7C9E113C2C34EE3C00C89E92 /* City.swift in Sources */,
+				7C9E11782C367A0100C89E92 /* Date+.swift in Sources */,
+				7C9E11762C36753600C89E92 /* String+.swift in Sources */,
 				7C9E11662C355EA300C89E92 /* UIViewController+.swift in Sources */,
 				7C79F03F2C33A13F00DEAE3C /* HourlyWeatherView.swift in Sources */,
 				7C9E11512C3511B600C89E92 /* BundleFileService.swift in Sources */,

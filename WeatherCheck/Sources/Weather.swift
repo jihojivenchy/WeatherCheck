@@ -15,23 +15,23 @@ struct Weather {
     let maxTemperature: Int
     let hourlyWeathers: [HourlyWeather]
     let dailyWeather: [DailyWeather]
-    let humidity: Double   // 습도
-    let clouds: Double     // 구름
-    let windSpeed: Double  // 바람 세기
+    let humidity: Int      // 습도
+    let clouds: Int        // 구름
+    let windSpeed: Double  // 바람 속도
     let pressure: Int      // 기압
 }
 
 /// 시간 별 날씨
 struct HourlyWeather {
     let time: String
-    let weatherStatus: String
+    let iconID: String
     let temperature: Int
 }
 
 /// 일 별 날씨
 struct DailyWeather {
     let day: String
-    let weatherStatus: String
+    let iconID: String
     let minTemperature: Int
     let maxTemperature: Int
 }
@@ -45,8 +45,8 @@ extension Weather {
         maxTemperature: 0,
         hourlyWeathers: [],
         dailyWeather: [],
-        humidity: 0.0,
-        clouds: 0.0,
+        humidity: 0,
+        clouds: 0,
         windSpeed: 0.0,
         pressure: 0
     )
