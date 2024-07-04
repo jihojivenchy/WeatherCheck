@@ -30,6 +30,7 @@ final class MainCoordinator: Coordinator {
             bundleFileService: bundleFileService,
             networkService: networkService
         )
+//        let mockRepository = MockSearchRepository()
         
         searchCityListUseCase = DefaultSearchCityListUseCase(searchRepository: searchRepository)
         searchWeatherUseCase = DefaultSearchWeatherUseCase(searchRepository: searchRepository)

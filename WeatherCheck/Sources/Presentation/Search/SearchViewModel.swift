@@ -56,7 +56,9 @@ final class SearchViewModel: ViewModelType {
                     cityList.accept(data)
                     
                 case .failure(let error):
-                    print("조회 실패: \(error.localizedDescription)")
+                    owner.coordinator?.showErrorAlert(configuration: ErrorAlertConfiguration(
+                        title: "오류", description: error.localizedDescription
+                    ))
                 }
             })
             .disposed(by: disposeBag)

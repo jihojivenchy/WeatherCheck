@@ -14,7 +14,7 @@ final class SearchViewController: BaseViewController {
     // MARK: - UI
     private let dragHandleBar: UIView = {
         let view = UIView()
-        view.backgroundColor = WCColor.gray08
+        view.backgroundColor = WCColor.gray
         view.clipsToBounds = true
         view.layer.cornerRadius = 2.5
         

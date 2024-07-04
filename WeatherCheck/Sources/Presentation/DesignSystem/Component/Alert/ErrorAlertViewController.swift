@@ -13,7 +13,7 @@ final class ErrorAlertViewController: BaseViewController {
     // MARK: - UI
     private let backgroundContainer: UIView = {
         let view = UIView()
-        view.backgroundColor = .darkSky
+        view.backgroundColor = .white
         view.layer.cornerRadius = 4
         view.clipsToBounds = true
         return view
@@ -22,14 +22,14 @@ final class ErrorAlertViewController: BaseViewController {
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 16)
-        label.textColor = .white
+        label.textColor = .darkSky
         return label
     }()
     
     private lazy var descriptionLabel: UILabel = {
         let label = UILabel()
         label.font = .boldSystemFont(ofSize: 12)
-        label.textColor = .white
+        label.textColor = .sky
         label.numberOfLines = 0
         return label
     }()
@@ -70,9 +70,9 @@ final class ErrorAlertViewController: BaseViewController {
         backgroundContainer.addSubview(descriptionLabel)
         
         backgroundContainer.snp.makeConstraints { make in
-            make.bottom.equalToSuperview()
-            make.horizontalEdges.equalToSuperview().inset(15)
-            make.height.equalTo(130)
+            make.bottom.equalToSuperview().inset(30)
+            make.horizontalEdges.equalToSuperview().inset(10)
+            make.height.equalTo(90)
         }
         
         titleLabel.snp.makeConstraints { make in
@@ -80,9 +80,8 @@ final class ErrorAlertViewController: BaseViewController {
         }
         
         descriptionLabel.snp.makeConstraints { make in
-            make.top.equalTo(titleLabel.snp.bottom).offset(15)
+            make.top.equalTo(titleLabel.snp.bottom).offset(5)
             make.horizontalEdges.equalToSuperview().inset(15)
-            make.bottom.equalToSuperview().inset(10)
         }
     }
     
