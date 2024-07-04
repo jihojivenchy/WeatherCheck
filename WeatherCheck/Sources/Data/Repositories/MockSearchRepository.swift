@@ -8,7 +8,7 @@
 import RxSwift
 
 final class MockSearchRepository: SearchRepository {
-    func searchWeather(cityID: Int) -> Observable<Weather> {
+    func searchWeather(for cityID: Int) -> Observable<Weather> {
         .just(Weather(
             cityName: "Seoul",
             currentTemperature: 7,
@@ -38,7 +38,7 @@ final class MockSearchRepository: SearchRepository {
         ))
     }
     
-    func searchCity(name: String) -> Observable<[City]> {
+    func searchCityList(for name: String) -> Observable<[City]> {
         .just([])
     }
 }

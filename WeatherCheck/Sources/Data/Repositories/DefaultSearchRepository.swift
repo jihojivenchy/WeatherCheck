@@ -20,7 +20,7 @@ final class DefaultSearchRepository: SearchRepository {
     }
     
     // MARK: - Methods
-    func searchWeather(cityID: Int) -> Observable<Weather> {
+    func searchWeather(for cityID: Int) -> Observable<Weather> {
         let weatherEndpoint = WeatherEndpoint.search(cityID: cityID)
         
         return networkService.request(to: weatherEndpoint)
@@ -31,7 +31,7 @@ final class DefaultSearchRepository: SearchRepository {
             }
     }
     
-    func searchCity(name: String) -> Observable<[City]> {
+    func searchCityList(for name: String) -> Observable<[City]> {
         return bundleFileService.fetchData(fromResource: "reduced_citylist", ofType: "json")
             .subscribe(on: ConcurrentDispatchQueueScheduler(qos: .background))  // 백그라운드 스레드에서 데이터 처리
             .decode(type: [CitySearchResponseDTO].self, decoder: JSONDecoder())

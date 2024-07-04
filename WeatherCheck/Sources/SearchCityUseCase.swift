@@ -7,11 +7,11 @@
 
 import RxSwift
 
-protocol SearchCityUseCase {
-    func search(name: String) -> Observable<[City]>
+protocol SearchCityListUseCase {
+    func search(for name: String) -> Observable<[City]>
 }
 
-final class DefaultSearchCityUseCase: SearchCityUseCase {
+final class DefaultSearchCityListUseCase: SearchCityListUseCase {
     
     private let searchRepository: SearchRepository
     
@@ -19,7 +19,7 @@ final class DefaultSearchCityUseCase: SearchCityUseCase {
         self.searchRepository = searchRepository
     }
     
-    func search(name: String) -> Observable<[City]> {
-        searchRepository.searchCity(name: name)
+    func search(for name: String) -> Observable<[City]> {
+        searchRepository.searchCityList(for: name)
     }
 }

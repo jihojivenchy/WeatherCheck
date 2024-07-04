@@ -9,6 +9,6 @@ import RxSwift
 
 /// 날씨 및 도시를 검색하는 리포지토리
 protocol SearchRepository {
-    func searchWeather(cityID: Int) -> Observable<Weather>
-    func searchCity(name: String) -> Observable<[City]>
+    func searchWeather(for cityID: Int) -> Observable<Weather>
+    func searchCityList(for name: String) -> Observable<[City]>
 }

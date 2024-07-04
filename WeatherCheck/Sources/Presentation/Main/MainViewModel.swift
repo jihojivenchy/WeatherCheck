@@ -44,7 +44,7 @@ final class MainViewModel: ViewModelType {
             .debug()
             .withUnretained(self)
             .flatMap { owner, _ in
-                owner.searchWeatherUseCase.search(cityID: 1839726).toResult()
+                owner.searchWeatherUseCase.search(for: 1839726).toResult()
             }
             .observe(on: MainScheduler.instance)
             .withUnretained(self)

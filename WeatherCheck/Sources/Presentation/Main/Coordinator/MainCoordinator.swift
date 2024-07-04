@@ -17,7 +17,7 @@ final class MainCoordinator: Coordinator {
     private let searchRepository: SearchRepository
     
     private let searchWeatherUseCase: SearchWeatherUseCase
-    private let searchCityUseCase: SearchCityUseCase
+    private let searchCityListUseCase: SearchCityListUseCase
     
     // MARK: - Init
     init(navigationController: UINavigationController) {
@@ -31,7 +31,7 @@ final class MainCoordinator: Coordinator {
             networkService: networkService
         )
         
-        searchCityUseCase = DefaultSearchCityUseCase(searchRepository: searchRepository)
+        searchCityListUseCase = DefaultSearchCityListUseCase(searchRepository: searchRepository)
         searchWeatherUseCase = DefaultSearchWeatherUseCase(searchRepository: searchRepository)
     }
     
@@ -56,7 +56,7 @@ extension MainCoordinator {
     func showSearchViewController(searchedCity: PublishSubject<City>) {
         let searchViewModel = SearchViewModel(
             coordinator: self,
-            searchCityUseCase: searchCityUseCase,
+            searchCityListUseCase: searchCityListUseCase,
             searchedCity: searchedCity
         )
         

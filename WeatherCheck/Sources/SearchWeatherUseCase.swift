@@ -9,7 +9,7 @@ import RxSwift
 
 // TODO: - 쿼리 구현
 protocol SearchWeatherUseCase {
-    func search(cityID: Int) -> Observable<Weather>
+    func search(for cityID: Int) -> Observable<Weather>
 }
 
 final class DefaultSearchWeatherUseCase: SearchWeatherUseCase {
@@ -20,7 +20,7 @@ final class DefaultSearchWeatherUseCase: SearchWeatherUseCase {
         self.searchRepository = searchRepository
     }
     
-    func search(cityID: Int) -> Observable<Weather> {
-        searchRepository.searchWeather(cityID: cityID)
+    func search(for cityID: Int) -> Observable<Weather> {
+        searchRepository.searchWeather(for: cityID)
     }
 }

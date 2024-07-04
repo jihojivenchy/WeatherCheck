@@ -23,17 +23,17 @@ final class SearchViewModel: ViewModelType {
     let disposeBag = DisposeBag()
     private weak var coordinator: MainCoordinator?
     
-    private let searchCityUseCase: SearchCityUseCase
+    private let searchCityListUseCase: SearchCityListUseCase
     private let searchedCity: PublishSubject<City>  // 검색 결과 이벤트를 전달하는 서브젝트
     
     // MARK: - Init
     init(
         coordinator: MainCoordinator,
-        searchCityUseCase: SearchCityUseCase,
+        searchCityListUseCase: SearchCityListUseCase,
         searchedCity: PublishSubject<City>
     ) {
         self.coordinator = coordinator
-        self.searchCityUseCase = searchCityUseCase
+        self.searchCityListUseCase = searchCityListUseCase
         self.searchedCity = searchedCity
     }
     
@@ -46,7 +46,7 @@ final class SearchViewModel: ViewModelType {
             .debug()
             .withUnretained(self)
             .flatMap { owner, name in
-                owner.searchCityUseCase.search(name: name).toResult()
+                owner.searchCityListUseCase.search(for: name).toResult()
             }
             .observe(on: MainScheduler.instance)
             .withUnretained(self)
