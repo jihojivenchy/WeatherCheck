@@ -65,6 +65,9 @@
 		7C9E11612C3554F500C89E92 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E11602C3554F500C89E92 /* AppCoordinator.swift */; };
 		7C9E11642C35564600C89E92 /* MainCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E11632C35564600C89E92 /* MainCoordinator.swift */; };
 		7C9E11662C355EA300C89E92 /* UIViewController+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E11652C355EA300C89E92 /* UIViewController+.swift */; };
+		7C9E116A2C365C5D00C89E92 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E11692C365C5D00C89E92 /* HTTP.swift */; };
+		7C9E116D2C365C8C00C89E92 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E116C2C365C8C00C89E92 /* Endpoint.swift */; };
+		7C9E116F2C36603E00C89E92 /* WeatherEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E116E2C36603E00C89E92 /* WeatherEndpoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -122,6 +125,9 @@
 		7C9E11602C3554F500C89E92 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		7C9E11632C35564600C89E92 /* MainCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainCoordinator.swift; sourceTree = "<group>"; };
 		7C9E11652C355EA300C89E92 /* UIViewController+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+.swift"; sourceTree = "<group>"; };
+		7C9E11692C365C5D00C89E92 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
+		7C9E116C2C365C8C00C89E92 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		7C9E116E2C36603E00C89E92 /* WeatherEndpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherEndpoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -302,8 +308,9 @@
 		7C79F0342C32F90700DEAE3C /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				7C9E11452C34F29C00C89E92 /* NetworkService */,
 				7C79F0372C32F92600DEAE3C /* DTOs */,
+				7C9E11672C365C3D00C89E92 /* Endpoint */,
+				7C9E11452C34F29C00C89E92 /* NetworkService */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -497,6 +504,32 @@
 			path = Coordinator;
 			sourceTree = "<group>";
 		};
+		7C9E11672C365C3D00C89E92 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+				7C9E11682C365C5400C89E92 /* Type */,
+				7C9E116B2C365C8100C89E92 /* Protocols */,
+				7C9E116E2C36603E00C89E92 /* WeatherEndpoint.swift */,
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		7C9E11682C365C5400C89E92 /* Type */ = {
+			isa = PBXGroup;
+			children = (
+				7C9E11692C365C5D00C89E92 /* HTTP.swift */,
+			);
+			path = Type;
+			sourceTree = "<group>";
+		};
+		7C9E116B2C365C8100C89E92 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				7C9E116C2C365C8C00C89E92 /* Endpoint.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -616,6 +649,7 @@
 				7C79F0332C32CDF100DEAE3C /* BaseCollectionReusableView.swift in Sources */,
 				7C79F06D2C3417FA00DEAE3C /* WeatherDetailContainer.swift in Sources */,
 				7C79F05F2C33DCA200DEAE3C /* DailyWeatherCell.swift in Sources */,
+				7C9E116A2C365C5D00C89E92 /* HTTP.swift in Sources */,
 				7C0851D92C32A1C500545907 /* ViewModelType.swift in Sources */,
 				7C79F0712C341AAB00DEAE3C /* BaseStackView.swift in Sources */,
 				7C79F0312C32CD9600DEAE3C /* CurrentWeatherView.swift in Sources */,
@@ -629,6 +663,8 @@
 				7C9E11242C34462100C89E92 /* BaseButton.swift in Sources */,
 				7C9E11402C34EF8B00C89E92 /* SearchRepository.swift in Sources */,
 				7C9E11552C35167000C89E92 /* BundleFileError.swift in Sources */,
+				7C9E116F2C36603E00C89E92 /* WeatherEndpoint.swift in Sources */,
+				7C9E116D2C365C8C00C89E92 /* Endpoint.swift in Sources */,
 				7C79F0552C33C6C600DEAE3C /* MainViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
