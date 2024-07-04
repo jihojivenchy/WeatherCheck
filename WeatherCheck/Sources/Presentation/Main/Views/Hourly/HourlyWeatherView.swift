@@ -110,7 +110,7 @@ extension HourlyWeatherView {
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
         
         let section = NSCollectionLayoutSection(group: group)
-        section.contentInsets = .init(top: 0, leading: -10, bottom: 0, trailing: 0)
+        section.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
         section.interGroupSpacing = 10
         section.orthogonalScrollingBehavior = .continuous
         

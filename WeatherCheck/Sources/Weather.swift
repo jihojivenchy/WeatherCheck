@@ -30,7 +30,7 @@ struct HourlyWeather {
 
 /// 일 별 날씨
 struct DailyWeather {
-    let day: String
+    let dayOfWeek: String
     let iconID: String
     let minTemperature: Int
     let maxTemperature: Int

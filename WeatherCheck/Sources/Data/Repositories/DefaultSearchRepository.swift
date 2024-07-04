@@ -116,6 +116,7 @@ extension DefaultSearchRepository {
         }
     }
     
+    /// 5일 동안의 일별 간격 데이터를 가져오는 메서드
     func getDailyWeatherForFiveDays(from dto: WeatherResponseDTO) -> [DailyWeather] {
         // 각 일별로 날씨 예보 리스트를 나누기
         var forecastsByDate: [String: [WeatherForecastResponseDTO]] = [:]
@@ -129,7 +130,8 @@ extension DefaultSearchRepository {
         // 날짜 순서대로 정렬
         let sortedDates = forecastsByDate.keys.sorted()
         var dailyWeatherList: [DailyWeather] = []
-        
+        var isFirstDay = true  // 첫 날인지 체크하는 변수
+
         // 정렬된 키 목록을 순회
         for date in sortedDates {
             // 키와 일치하는 값
@@ -148,8 +150,12 @@ extension DefaultSearchRepository {
             // 날씨 아이콘 아이디
             let iconID = forecasts.first?.weatherStatus.first?.iconID ?? ""
             
+            // 첫 날이라면 "오늘"로 설정, 나머지는 요일
+            let dayOfWeek = isFirstDay ? "오늘" : date.toDayOfWeek() ?? "요일 오류"
+            isFirstDay = false
+            
             dailyWeatherList.append(DailyWeather(
-                day: date.toDayOfWeek() ?? "요일 오류",
+                dayOfWeek: dayOfWeek,
                 iconID: iconID,
                 minTemperature: Int(minTemperatureAverage),
                 maxTemperature: Int(maxTemperatureAverage)

@@ -24,11 +24,11 @@ final class MockSearchRepository: SearchRepository {
                 HourlyWeather(time: "오후 11시", iconID: "01d", temperature: 11),
             ],
             dailyWeather: [
-                DailyWeather(day: "오늘", iconID: "13d", minTemperature: -7, maxTemperature: 7),
-                DailyWeather(day: "수", iconID: "13d", minTemperature: -7, maxTemperature: 7),
-                DailyWeather(day: "목", iconID: "13d", minTemperature: 7, maxTemperature: 14),
-                DailyWeather(day: "금", iconID: "11d", minTemperature: 11, maxTemperature: 16),
-                DailyWeather(day: "토", iconID: "11d", minTemperature: 15, maxTemperature: 23)
+                DailyWeather(dayOfWeek: "오늘", iconID: "13d", minTemperature: -7, maxTemperature: 7),
+                DailyWeather(dayOfWeek: "수", iconID: "13d", minTemperature: -7, maxTemperature: 7),
+                DailyWeather(dayOfWeek: "목", iconID: "13d", minTemperature: 7, maxTemperature: 14),
+                DailyWeather(dayOfWeek: "금", iconID: "11d", minTemperature: 11, maxTemperature: 16),
+                DailyWeather(dayOfWeek: "토", iconID: "11d", minTemperature: 15, maxTemperature: 23)
             ],
             humidity: 56,
             clouds: 50,
