@@ -26,7 +26,7 @@ extension WeatherEndpoint: Endpoint {
                 "cnt": "35",
                 "units": "metric",
                 "lang": "kr",
-                "appid": APIKeyManager.openWeatherMapAPIKey // TODO: - 하드코딩 제거하고, 따로 API키 저장
+                "appid": APIKeyManager.openWeatherMapAPIKey
             ]
         }
     }
