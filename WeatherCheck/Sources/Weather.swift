@@ -8,14 +8,13 @@
 import Foundation
 
 struct Weather {
-    let cityName: String
+    let city: City
     let currentTemperature: Int
     let weatherStatus: String
     let minTemperature: Int
     let maxTemperature: Int
     let hourlyWeathers: [HourlyWeather]
     let dailyWeather: [DailyWeather]
-    let coordinate: Coordinate
     let humidity: Double   // 습도
     let clouds: Double     // 구름
     let windSpeed: Double  // 바람 세기
@@ -39,14 +38,13 @@ struct DailyWeather {
 
 extension Weather {
     static let onError = Weather(
-        cityName: "찾을 수 없습니다.",
+        city: City(id: 0, name: "찾을 수 없습니다", country: "KR", coordinate: Coordinate(latitude: 0, longitude: 0)),
         currentTemperature: 0,
         weatherStatus: "오류",
         minTemperature: 0,
         maxTemperature: 0,
         hourlyWeathers: [],
         dailyWeather: [],
-        coordinate: Coordinate(latitude: 0, longitude: 0),
         humidity: 0.0,
         clouds: 0.0,
         windSpeed: 0.0,

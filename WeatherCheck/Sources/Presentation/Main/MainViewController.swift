@@ -119,7 +119,7 @@ final class MainViewController: BaseViewController {
                 
                 // 현재 날씨 정보 표시
                 self.currentWeatherView.configure(.init(
-                    cityName: data.cityName,
+                    cityName: data.city.name,
                     currentTemperature: data.currentTemperature,
                     weatherStatus: data.weatherStatus,
                     minTemperature: data.minTemperature,
@@ -134,9 +134,9 @@ final class MainViewController: BaseViewController {
                 
                 // 도시 위치 표시
                 self.cityLocationView.configure(
-                    cityName: data.cityName,
-                    latitude: data.coordinate.latitude,
-                    longitude: data.coordinate.longitude
+                    cityName: data.city.name,
+                    latitude: data.city.coordinate.latitude,
+                    longitude: data.city.coordinate.longitude
                 )
                 
                 // 습도, 구름, 바람세기 표시

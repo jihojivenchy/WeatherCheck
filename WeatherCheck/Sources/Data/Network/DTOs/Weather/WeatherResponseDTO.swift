@@ -9,7 +9,7 @@ import Foundation
 
 struct WeatherResponseDTO: Decodable {
     let list: [WeatherForecastResponseDTO]  // 예보 항목 리스트
-    let city: CityResponserDTO
+    let city: CitySearchResponseDTO
 }
 
 struct WeatherForecastResponseDTO: Decodable {
@@ -71,16 +71,4 @@ struct WindResponseDTO: Codable {
         case speed
         case gustSpeed = "gust"
     }
-}
-
-struct CityResponserDTO: Decodable {
-    let id: Int
-    let name: String
-    let coordinate: CoordinateResponseDTO
-    let country: String
-    
-    enum CodingKeys: String, CodingKey {
-         case id, name, country
-         case coordinate = "coord"
-     }
 }

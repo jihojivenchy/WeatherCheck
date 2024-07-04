@@ -10,7 +10,7 @@ import RxSwift
 final class MockSearchRepository: SearchRepository {
     func searchWeather(for cityID: Int) -> Observable<Weather> {
         .just(Weather(
-            cityName: "Seoul",
+            city: City(id: 1839726, name: "Asan", country: "KR", coordinate: Coordinate(latitude: 36.783611, longitude: 127.004173)),
             currentTemperature: 7,
             weatherStatus: "맑음",
             minTemperature: 0,
@@ -30,7 +30,6 @@ final class MockSearchRepository: SearchRepository {
                 DailyWeather(day: "금", weatherStatus: "11d", minTemperature: 11, maxTemperature: 16),
                 DailyWeather(day: "토", weatherStatus: "11d", minTemperature: 15, maxTemperature: 23)
             ],
-            coordinate: Coordinate(latitude: 36.783611, longitude: 127.004173),
             humidity: 56,
             clouds: 50,
             windSpeed: 1.97,
