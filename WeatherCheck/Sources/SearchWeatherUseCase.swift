@@ -7,7 +7,6 @@
 
 import RxSwift
 
-// TODO: - 쿼리 구현
 protocol SearchWeatherUseCase {
     func search(for cityID: Int) -> Observable<Weather>
 }

@@ -12,7 +12,7 @@ import RxSwift
 // TODO: - 알라모파이어 적용 생각하기
 final class DefaultNetworkService: NetworkService {
     func request(to endpoint: Endpoint) -> Observable<Data> {
-        guard var request = endpoint.toURLRequest() else { return .error(NetworkError.invalidRequest) }
+        guard let request = endpoint.toURLRequest() else { return .error(NetworkError.invalidRequest) }
         
         return URLSession.shared.rx.response(request: request)
             .flatMap { httpResponse, data in
@@ -22,7 +22,7 @@ final class DefaultNetworkService: NetworkService {
                 case 200 ..< 300:
                     return Observable.just(data)
                 
-                // 인터셉터가 있다면 재시도 처리
+                // 만약 인터셉터가 있다면 재시도 처리
                 case 401:
                     return Observable.error(NetworkError.statusCode(statusCode))
                     

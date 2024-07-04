@@ -334,8 +334,8 @@
 		7C79F0372C32F92600DEAE3C /* DTOs */ = {
 			isa = PBXGroup;
 			children = (
-				7C9E11352C34ED2800C89E92 /* Weather */,
-				7C9E11362C34ED3200C89E92 /* Search */,
+				7C79F03C2C3306C900DEAE3C /* WeatherResponseDTO.swift */,
+				7C9E11372C34ED4F00C89E92 /* CitySearchResponseDTO.swift */,
 			);
 			path = DTOs;
 			sourceTree = "<group>";
@@ -449,22 +449,6 @@
 				7C9E11582C351C2200C89E92 /* SearchViewModel.swift */,
 				7C9E112F2C34E8E800C89E92 /* SearchViewController.swift */,
 				7C9E115C2C35250100C89E92 /* Views */,
-			);
-			path = Search;
-			sourceTree = "<group>";
-		};
-		7C9E11352C34ED2800C89E92 /* Weather */ = {
-			isa = PBXGroup;
-			children = (
-				7C79F03C2C3306C900DEAE3C /* WeatherResponseDTO.swift */,
-			);
-			path = Weather;
-			sourceTree = "<group>";
-		};
-		7C9E11362C34ED3200C89E92 /* Search */ = {
-			isa = PBXGroup;
-			children = (
-				7C9E11372C34ED4F00C89E92 /* CitySearchResponseDTO.swift */,
 			);
 			path = Search;
 			sourceTree = "<group>";
