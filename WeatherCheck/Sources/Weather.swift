@@ -15,11 +15,11 @@ struct Weather {
     let maxTemperature: Int
     let hourlyWeathers: [HourlyWeather]
     let dailyWeather: [DailyWeather]
-    let latitude: Double
-    let longitude: Double
+    let coordinate: Coordinate
     let humidity: Double   // 습도
     let clouds: Double     // 구름
     let windSpeed: Double  // 바람 세기
+    let pressure: Int      // 기압
 }
 
 /// 시간 별 날씨
@@ -46,10 +46,10 @@ extension Weather {
         maxTemperature: 0,
         hourlyWeathers: [],
         dailyWeather: [],
-        latitude: 0.0,
-        longitude: 0.0,
+        coordinate: Coordinate(latitude: 0, longitude: 0),
         humidity: 0.0,
         clouds: 0.0,
-        windSpeed: 0.0
+        windSpeed: 0.0,
+        pressure: 0
     )
 }

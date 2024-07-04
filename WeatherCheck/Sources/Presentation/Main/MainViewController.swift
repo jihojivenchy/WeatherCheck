@@ -135,15 +135,16 @@ final class MainViewController: BaseViewController {
                 // 도시 위치 표시
                 self.cityLocationView.configure(
                     cityName: data.cityName,
-                    latitude: data.latitude,
-                    longitude: data.longitude
+                    latitude: data.coordinate.latitude,
+                    longitude: data.coordinate.longitude
                 )
                 
                 // 습도, 구름, 바람세기 표시
                 self.weatherDetailsView.configure(
                     humidity: data.humidity,
                     clouds: data.clouds,
-                    windSpeed: data.windSpeed
+                    windSpeed: data.windSpeed,
+                    pressure: data.pressure
                 )
             })
             .disposed(by: disposeBag)

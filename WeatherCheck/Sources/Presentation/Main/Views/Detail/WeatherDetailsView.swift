@@ -43,10 +43,10 @@ final class WeatherDetailsView: BaseStackView {
 
 // MARK: - Configuration
 extension WeatherDetailsView {
-    func configure(humidity: Double, clouds: Double, windSpeed: Double) {
+    func configure(humidity: Double, clouds: Double, windSpeed: Double, pressure: Int) {
         humidityContainer.configure(title: "습도", value: "\(humidity)%")
         cloudsContainer.configure(title: "구름", value: "\(clouds)%")
         windSpeedContainer.configure(title: "바람 속도", value: "\(windSpeed)m/s")
-        pressureContainer.configure(title: "기압", value: "")
+        pressureContainer.configure(title: "기압", value: "\(pressure)hpa")
     }
 }

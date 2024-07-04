@@ -30,11 +30,11 @@ final class MockSearchRepository: SearchRepository {
                 DailyWeather(day: "금", weatherStatus: "11d", minTemperature: 11, maxTemperature: 16),
                 DailyWeather(day: "토", weatherStatus: "11d", minTemperature: 15, maxTemperature: 23)
             ],
-            latitude: 36.783611,
-            longitude: 127.004173,
+            coordinate: Coordinate(latitude: 36.783611, longitude: 127.004173),
             humidity: 56,
             clouds: 50,
-            windSpeed: 1.97
+            windSpeed: 1.97,
+            pressure: 1030
         ))
     }
     
