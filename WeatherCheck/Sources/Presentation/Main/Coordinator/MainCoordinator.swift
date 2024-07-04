@@ -53,11 +53,11 @@ extension MainCoordinator {
         navigationController.pushViewController(mainVC, animated: true)
     }
     
-    func showSearchViewController(searchedCity: PublishSubject<City>) {
+    func showSearchViewController(searchedCityID: PublishSubject<CityID>) {
         let searchViewModel = SearchViewModel(
             coordinator: self,
             searchCityListUseCase: searchCityListUseCase,
-            searchedCity: searchedCity
+            searchedCityID: searchedCityID
         )
         
         let searchVC = SearchViewController(viewModel: searchViewModel)

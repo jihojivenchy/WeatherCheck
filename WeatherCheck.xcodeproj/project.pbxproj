@@ -72,6 +72,7 @@
 		7C9E11732C36624400C89E92 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E11722C36624400C89E92 /* NetworkError.swift */; };
 		7C9E11762C36753600C89E92 /* String+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E11752C36753600C89E92 /* String+.swift */; };
 		7C9E11782C367A0100C89E92 /* Date+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E11772C367A0100C89E92 /* Date+.swift */; };
+		7C9E117B2C36ACFA00C89E92 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C9E117A2C36ACFA00C89E92 /* Typealias.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -136,6 +137,7 @@
 		7C9E11722C36624400C89E92 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		7C9E11752C36753600C89E92 /* String+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+.swift"; sourceTree = "<group>"; };
 		7C9E11772C367A0100C89E92 /* Date+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+.swift"; sourceTree = "<group>"; };
+		7C9E117A2C36ACFA00C89E92 /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +253,7 @@
 				7C0851CA2C329E1200545907 /* Bases */,
 				7C0851D22C329FCB00545907 /* Extensions */,
 				7C79F0562C33C8D500DEAE3C /* RxExtensions */,
+				7C9E11792C36ACEA00C89E92 /* Typealias */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -550,6 +553,14 @@
 			path = Utills;
 			sourceTree = "<group>";
 		};
+		7C9E11792C36ACEA00C89E92 /* Typealias */ = {
+			isa = PBXGroup;
+			children = (
+				7C9E117A2C36ACFA00C89E92 /* Typealias.swift */,
+			);
+			path = Typealias;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -665,6 +676,7 @@
 				7C9E11642C35564600C89E92 /* MainCoordinator.swift in Sources */,
 				7C79F03D2C3306C900DEAE3C /* WeatherResponseDTO.swift in Sources */,
 				7C79F0652C33E74D00DEAE3C /* UILabel+.swift in Sources */,
+				7C9E117B2C36ACFA00C89E92 /* Typealias.swift in Sources */,
 				7C9E11262C34489800C89E92 /* UIImage+.swift in Sources */,
 				7C9E11592C351C2200C89E92 /* SearchViewModel.swift in Sources */,
 				7C9E11382C34ED4F00C89E92 /* CitySearchResponseDTO.swift in Sources */,

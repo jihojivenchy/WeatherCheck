@@ -24,17 +24,17 @@ final class SearchViewModel: ViewModelType {
     private weak var coordinator: MainCoordinator?
     
     private let searchCityListUseCase: SearchCityListUseCase
-    private let searchedCity: PublishSubject<City>  // 검색 결과 이벤트를 전달하는 서브젝트
+    private let searchedCityID: PublishSubject<CityID>  // 검색 결과 이벤트를 전달하는 서브젝트
     
     // MARK: - Init
     init(
         coordinator: MainCoordinator,
         searchCityListUseCase: SearchCityListUseCase,
-        searchedCity: PublishSubject<City>
+        searchedCityID: PublishSubject<CityID>
     ) {
         self.coordinator = coordinator
         self.searchCityListUseCase = searchCityListUseCase
-        self.searchedCity = searchedCity
+        self.searchedCityID = searchedCityID
     }
     
     // MARK: - Transformation
@@ -68,7 +68,7 @@ final class SearchViewModel: ViewModelType {
             }
             .withUnretained(self)
             .subscribe(onNext: { owner, selectedCity in
-                owner.searchedCity.onNext(selectedCity)
+                owner.searchedCityID.onNext(selectedCity.id)
                 owner.coordinator?.dismiss()
             })
             .disposed(by: disposeBag)
