@@ -25,7 +25,11 @@ final class MainCoordinator: Coordinator {
         self.childCoordinators = []
         
         let bundleFileService = DefaultBundleFileService()
-        searchRepository = DefaultSearchRepository(bundleFileService: bundleFileService)
+        let networkService = DefaultNetworkService()
+        searchRepository = DefaultSearchRepository(
+            bundleFileService: bundleFileService,
+            networkService: networkService
+        )
         
         searchCityUseCase = DefaultSearchCityUseCase(searchRepository: searchRepository)
         searchWeatherUseCase = DefaultSearchWeatherUseCase(searchRepository: searchRepository)
